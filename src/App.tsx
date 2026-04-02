@@ -11,7 +11,6 @@ import ChemistryIndex from "./pages/ChemistryIndex.tsx";
 import PhysicsLayout from "./pages/PhysicsLayout.tsx";
 import PhysicsIndexPage from "./pages/PhysicsIndexPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import SignLanguageTranslator from "./pages/SignLanguageTranslator.tsx";
 
 // Physics Pages
 import MechanicsPage from "./pages/physics/MechanicsPage.tsx";
@@ -58,8 +57,6 @@ const App = () => (
             <Route path="*" element={<PhysicsNotFound />} />
           </Route>
 
-<Route path="/tools/sign-language" element={<SignLanguageTranslator />} />
-          
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
             </Routes>

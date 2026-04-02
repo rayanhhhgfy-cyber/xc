@@ -13,8 +13,7 @@
     "tools_menu": {
       "unitConverter": "محول الوحدات",
       "formulaCalc": "حاسبة الصيغ",
-"glossary":"المسرد",
-  "signLanguage":"مترجم اللغة الإشارية"
+"glossary":"المسرد"
     }
   },
   "footer": {
@@ -31,10 +30,8 @@
     "getStarted": "ابدأ الآن",
     "chemistry": "الكيمياء",
     "physics": "الفيزياء",
-    "exploreChemistry": "استكشف تفاعلات الكيمياء التفاعلية والمركبات",
-    "explorePhysics": "استكشف محاكيات الفيزياء التفاعلية",
     "features": {
-      "title": "المميزات الرئيسية",
+      "title": " ؟ UN لماذا تختار ",
       "feature1": {
         "icon": "⚡",
         "title": "ثلاثي الأبعاد في الوقت الحقيقي",

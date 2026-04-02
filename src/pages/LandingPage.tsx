@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import { Atom, Zap, ArrowRight, Zap as ZapIcon, Hand } from "lucide-react";
+import { Atom, Zap, ArrowRight, Zap as ZapIcon } from "lucide-react";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import AntiGravityOverlay from "@/components/three/AntiGravityOverlay";
 
@@ -85,80 +85,85 @@ export default function LandingPage() {
           animate="visible"
         >
           {/* Hero Title */}
-          <motion.div className="text-center mb-6 sm:mb-10 md:mb-16 max-w-4xl" variants={itemVariants}>
-            <h2 className="text-3xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-[1.1]">
+          <motion.div className="text-center mb-6 sm:mb-10 md:mb-14 max-w-4xl" variants={itemVariants}>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mx-auto mb-6">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 text-white shadow-lg shadow-cyan-500/20">
+                <ZapIcon className="w-5 h-5" />
+              </span>
+              <span className="text-xs uppercase tracking-[0.28em] text-slate-300 font-semibold">
+                {t('landing.hero.title')}
+              </span>
+            </div>
+
+            <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight mb-5 leading-[1.05]">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 {t('landing.hero.title')}
               </span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xl mx-auto leading-relaxed px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-4">
               {t('landing.hero.subtitle')}
             </p>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-3 text-[11px] sm:text-xs text-slate-400 uppercase tracking-[0.22em]">
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">Interactive labs</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">Real-time simulation</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">STEM learning</span>
+            </div>
           </motion.div>
 
           {/* Lab Cards Grid */}
           <motion.div
-            className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16"
+            className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-10 mb-12 sm:mb-16"
             variants={itemVariants}
           >
             {/* Physics Lab */}
             <motion.div
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              whileHover={{ y: -10 }}
               className="group relative"
             >
               <Link to="/physics">
-                <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-cyan-500/30 transition-all duration-300 group-hover:border-cyan-400/60 group-hover:shadow-2xl group-hover:shadow-cyan-500/40">
-                  {/* Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-blue-600/5 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  {/* Accent glow */}
-                  <motion.div
-                    className="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                  />
-
-                  {/* Content */}
-                  <div className="relative flex flex-col items-center justify-center text-center p-6 sm:p-8 md:p-10 py-12 sm:py-16 md:py-20">
-                    <motion.div
-                      className="mb-4 sm:mb-6 md:mb-8"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
-                    >
-                      <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/50 mx-auto">
-                        <Zap className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+                <div className="relative overflow-hidden rounded-[2rem] p-[1px] bg-gradient-to-br from-cyan-500/80 via-blue-500/60 to-slate-800/30 shadow-2xl shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                  <div className="relative overflow-hidden rounded-[1.75rem] bg-slate-950/95 backdrop-blur-xl border border-white/10">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.14),transparent_32%)]" />
+                    <div className="relative flex flex-col items-center justify-center text-center p-8 sm:p-10 lg:p-12 space-y-6">
+                      <div className="relative inline-flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-slate-900/80 border border-cyan-500/20 shadow-[0_20px_80px_-40px_rgba(34,211,238,0.6)]">
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/20 to-transparent blur-2xl" />
+                        <Zap className="relative w-10 h-10 sm:w-12 sm:h-12 text-white" />
                       </div>
-                    </motion.div>
 
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                      {t('landing.physics_card.title')}
-                    </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-sm">
-                      {t('landing.physics_card.description')}
-                    </p>
+                      <div className="space-y-4">
+                        <span className="inline-flex items-center rounded-full bg-cyan-500/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-cyan-200/90">
+                          {t('landing.physics_card.title')}
+                        </span>
+                        <h3 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
+                          {t('landing.physics_card.title')}
+                        </h3>
+                        <p className="text-sm sm:text-base text-slate-300 max-w-lg mx-auto leading-relaxed">
+                          {t('landing.physics_card.description')}
+                        </p>
+                      </div>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-4 sm:mb-6 md:mb-8">
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40">
-                        {t('landing.physics_card.tags.0')}
-                      </span>
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/40">
-                        {t('landing.physics_card.tags.1')}
-                      </span>
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/40">
-                        {t('landing.physics_card.tags.2')}
-                      </span>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        <span className="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-200 border border-cyan-400/20">
+                          {t('landing.physics_card.tags.0')}
+                        </span>
+                        <span className="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-blue-500/15 text-blue-200 border border-blue-400/20">
+                          {t('landing.physics_card.tags.1')}
+                        </span>
+                        <span className="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-violet-500/15 text-violet-200 border border-violet-400/20">
+                          {t('landing.physics_card.tags.2')}
+                        </span>
+                      </div>
+
+                      <motion.button
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30"
+                      >
+                        {t('landing.physics_card.button')}
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.button>
                     </div>
-
-                    {/* Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs sm:text-sm md:text-base rounded-full hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-300"
-                    >
-                      {t('landing.physics_card.button')}
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                    </motion.button>
                   </div>
                 </div>
               </Link>
@@ -166,124 +171,52 @@ export default function LandingPage() {
 
             {/* Chemistry Lab */}
             <motion.div
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              whileHover={{ y: -10 }}
               className="group relative"
             >
               <Link to="/chemistry">
-                <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-purple-500/30 transition-all duration-300 group-hover:border-purple-400/60 group-hover:shadow-2xl group-hover:shadow-purple-500/40">
-                  {/* Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/5 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  {/* Accent glow */}
-                  <motion.div
-                    className="absolute -top-32 -right-32 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                  />
-
-                  {/* Content */}
-                  <div className="relative flex flex-col items-center justify-center text-center p-6 sm:p-8 md:p-10 py-12 sm:py-16 md:py-20">
-                    <motion.div
-                      className="mb-4 sm:mb-6 md:mb-8"
-                      whileHover={{ rotate: -360 }}
-                      transition={{ duration: 0.8 }}
-                    >
-                      <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 mx-auto">
-                        <Atom className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+                <div className="relative overflow-hidden rounded-[2rem] p-[1px] bg-gradient-to-br from-purple-500/80 via-fuchsia-500/60 to-rose-500/40 shadow-2xl shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+                  <div className="relative overflow-hidden rounded-[1.75rem] bg-slate-950/95 backdrop-blur-xl border border-white/10">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.14),transparent_35%)]" />
+                    <div className="relative flex flex-col items-center justify-center text-center p-8 sm:p-10 lg:p-12 space-y-6">
+                      <div className="relative inline-flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-slate-900/80 border border-purple-500/20 shadow-[0_20px_80px_-40px_rgba(168,85,247,0.6)]">
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-transparent blur-2xl" />
+                        <Atom className="relative w-10 h-10 sm:w-12 sm:h-12 text-white" />
                       </div>
-                    </motion.div>
 
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                      {t('landing.chemistry_card.title')}
-                    </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-sm">
-                      {t('landing.chemistry_card.description')}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-4 sm:mb-6 md:mb-8">
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/40">
-                        {t('landing.chemistry_card.tags.0')}
-                      </span>
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-pink-500/20 text-pink-300 border border-pink-400/40">
-                        {t('landing.chemistry_card.tags.1')}
-                      </span>
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-red-500/20 text-red-300 border border-red-400/40">
-                        {t('landing.chemistry_card.tags.2')}
-                      </span>
-                    </div>
-
-                    {/* Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-xs sm:text-sm md:text-base rounded-full hover:shadow-lg hover:shadow-purple-500/40 transition-all duration-300"
-                    >
-                      {t('landing.chemistry_card.button')}
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                    </motion.button>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-            {/* Accessibility Tools Hub */}
-            <motion.div
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative"
-            >
-              <Link to="/tools/sign-language">
-                <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-emerald-500/30 transition-all duration-300 group-hover:border-emerald-400/60 group-hover:shadow-2xl group-hover:shadow-emerald-500/40">
-                  {/* Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/10 to-teal-600/5 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  {/* Accent glow */}
-                  <motion.div
-                    className="absolute -top-32 -right-32 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-                  />
-
-                  {/* Content */}
-                  <div className="relative flex flex-col items-center justify-center text-center p-6 sm:p-8 md:p-10 py-12 sm:py-16 md:py-20 h-full">
-                    <motion.div
-                      className="mb-4 sm:mb-6 md:mb-8"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.8 }}
-                    >
-                      <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center shadow-2xl shadow-emerald-500/50 mx-auto">
-                        <Hand className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+                      <div className="space-y-4">
+                        <span className="inline-flex items-center rounded-full bg-purple-500/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-purple-200/90">
+                          {t('landing.chemistry_card.title')}
+                        </span>
+                        <h3 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
+                          {t('landing.chemistry_card.title')}
+                        </h3>
+                        <p className="text-sm sm:text-base text-slate-300 max-w-lg mx-auto leading-relaxed">
+                          {t('landing.chemistry_card.description')}
+                        </p>
                       </div>
-                    </motion.div>
 
-                    <h3 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                      {t('nav.tools_menu.signLanguage')}
-                    </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-sm">
-                      {t('landing.accessibility.description', 'Translate ASL accurately with our AI model.')}
-                    </p>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        <span className="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-purple-500/15 text-purple-200 border border-purple-400/20">
+                          {t('landing.chemistry_card.tags.0')}
+                        </span>
+                        <span className="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-pink-500/15 text-pink-200 border border-pink-400/20">
+                          {t('landing.chemistry_card.tags.1')}
+                        </span>
+                        <span className="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-red-500/15 text-red-200 border border-red-400/20">
+                          {t('landing.chemistry_card.tags.2')}
+                        </span>
+                      </div>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-4 sm:mb-6 md:mb-8 mt-auto">
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
-                        {t('landing.accessibility.tags.0', 'AI')}
-                      </span>
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-400/40">
-                        {t('landing.accessibility.tags.1', 'Accessibility')}
-                      </span>
-                      <span className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-green-500/20 text-green-300 border border-green-400/40">
-                        {t('landing.accessibility.tags.2', 'ASL')}
-                      </span>
+                      <motion.button
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-pink-500/20"
+                      >
+                        {t('landing.chemistry_card.button')}
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.button>
                     </div>
-
-                    {/* Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-2 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-xs sm:text-sm md:text-base rounded-full hover:shadow-lg hover:shadow-emerald-500/40 transition-all duration-300"
-                    >
-                      {t('global.navigation.open', 'Open Tool')}
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                    </motion.button>
                   </div>
                 </div>
               </Link>

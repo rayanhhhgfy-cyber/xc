@@ -26,7 +26,6 @@ export default function Navbar() {
     { path: "/physics/converter", label: t("nav.tools_menu.unitConverter") },
     { path: "/physics/calculator", label: t("nav.tools_menu.formulaCalc") },
     { path: "/physics/glossary", label: t("nav.tools_menu.glossary") },
-    { path: "/tools/sign-language", label: t("nav.tools_menu.signLanguage") },
   ];
 
   const isToolsActive = (pathname: string) => 

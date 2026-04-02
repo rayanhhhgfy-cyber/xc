@@ -23,7 +23,6 @@ export default function PhysicsLayout() {
     { path: "/physics/converter", label: t('physics.navigation.converter') },
     { path: "/physics/calculator", label: t('physics.navigation.calculator') },
     { path: "/physics/glossary", label: t('physics.navigation.glossary') },
-    { path: "/tools/sign-language", label: t('nav.tools_menu.signLanguage') },
   ];
 
   return (
