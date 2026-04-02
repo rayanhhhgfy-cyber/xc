@@ -1,0 +1,114 @@
+﻿
+> UN@0.0.0 build
+> vite build
+
+[36mvite v5.4.19 [32mbuilding for production...[36m[39m
+transforming...
+node.exe : Browserslist: 
+browsers data 
+(caniuse-lite) is 10 
+months old. Please run:
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Bro  
+  wserslist: b...ld. Ple   
+ ase run::String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+  npx update-browserslist-d
+b@latest
+  Why you should do it 
+regularly: https://github.c
+om/browserslist/update-db#r
+eadme
+[32mظ£ô[39m 2689 modules transformed.
+[31mx[39m Build failed 
+in 6.33s
+[31merror during build:
+[31msrc/App.tsx (2:39): 
+"Suspense" is not exported 
+by "node_modules/react-rout
+er-dom/dist/index.js", 
+imported by 
+"src/App.tsx".[31m
+file: [36mC:/Users/Lenovo/
+Downloads/4355/34/src/App.t
+sx:2:39[31m
+[33m
+1: import { QueryClient, 
+QueryClientProvider } from 
+"@tanstack/react-query";
+2: import { BrowserRouter, 
+Route, Routes, Suspense } 
+from "react-router-dom";
+                           
+               ^
+3: import { Toaster as 
+Sonner } from 
+"@/components/ui/sonner";
+4: import { Toaster } from 
+"@/components/ui/toaster";
+[31m
+    at getRollupError (file
+:///C:/Users/Lenovo/Downloa
+ds/4355/34/node_modules/rol
+lup/dist/es/shared/parseAst
+.js:395:41)
+    at error (file:///C:/Us
+ers/Lenovo/Downloads/4355/3
+4/node_modules/rollup/dist/
+es/shared/parseAst.js:391:4
+2)
+    at Module.error (file:/
+//C:/Users/Lenovo/Downloads
+/4355/34/node_modules/rollu
+p/dist/es/shared/node-entry
+.js:15535:16)
+    at 
+Module.traceVariable (file:
+///C:/Users/Lenovo/Download
+s/4355/34/node_modules/roll
+up/dist/es/shared/node-entr
+y.js:15984:29)
+    at 
+ModuleScope.findVariable (f
+ile:///C:/Users/Lenovo/Down
+loads/4355/34/node_modules/
+rollup/dist/es/shared/node-
+entry.js:13770:39)
+    at ReturnValueScope.fin
+dVariable (file:///C:/Users
+/Lenovo/Downloads/4355/34/n
+ode_modules/rollup/dist/es/
+shared/node-entry.js:5252:3
+8)
+    at FunctionBodyScope.fi
+ndVariable (file:///C:/User
+s/Lenovo/Downloads/4355/34/
+node_modules/rollup/dist/es
+/shared/node-entry.js:5252:
+38)
+    at Identifier.bind (fil
+e:///C:/Users/Lenovo/Downlo
+ads/4355/34/node_modules/ro
+llup/dist/es/shared/node-en
+try.js:5035:40)
+    at CallExpression.bind 
+(file:///C:/Users/Lenovo/Do
+wnloads/4355/34/node_module
+s/rollup/dist/es/shared/nod
+e-entry.js:2851:28)
+    at CallExpression.bind 
+(file:///C:/Users/Lenovo/Do
+wnloads/4355/34/node_module
+s/rollup/dist/es/shared/nod
+e-entry.js:11235:15)[39m

@@ -1,0 +1,577 @@
+{
+  "nav": {
+    "home": "Home",
+    "chemistry": "Chemistry",
+    "mechanics": "Mechanics",
+    "electromagnetism": "E&M",
+    "thermodynamics": "Thermo",
+    "waves": "Waves",
+    "modern": "Modern",
+    "library": "Library",
+    "tools": "Resources",
+    "challenges": "Challenges",
+    "tools_menu": {
+      "unitConverter": "Unit Converter",
+      "formulaCalc": "Formula Calc",
+"glossary":"Glossary",
+  "signLanguage":"Sign Language Translator"
+    }
+  },
+  "footer": {
+    "madeBy": "Made by rayyan mohammed - aws altammimi -taha ababneh",
+    "schoolName": "King Hussain Bin Talal Secondary School for Boys Students",
+    "tagline": "Science through Innovation and Excellence",
+    "empowering": "Empowering Future Scientists",
+    "copyright": "© {{year}} All Rights Reserved"
+  },
+  "landing": {
+    "title": "Alchemy Lab Online",
+    "subtitle": "Interactive Science Learning Platform",
+    "description": "Explore chemistry and physics through interactive simulations and experiments",
+    "getStarted": "Get Started",
+    "chemistry": "Chemistry",
+    "physics": "Physics",
+    "exploreChemistry": "Explore interactive chemistry reactions and compounds",
+    "explorePhysics": "Explore interactive physics simulations",
+    "features": {
+      "title": "Core Features",
+      "feature1": {
+        "icon": "⚡",
+        "title": "Real-time 3D",
+        "description": "Interactive visualizations that bring science to life"
+      },
+      "feature2": {
+        "icon": "🎓",
+        "title": "Education First",
+        "description": "Designed to enhance learning with practical tools"
+      },
+      "feature3": {
+        "icon": "🚀",
+        "title": "Cutting-edge",
+        "description": "Latest technologies for immersive experiences"
+      }
+    },
+    "hero": {
+      "title": "Explore Science",
+      "subtitle": "Interactive simulations and experiments for Physics and Chemistry"
+    },
+    "physics_card": {
+      "title": "Physics Labs",
+      "description": "20+ interactive experiments exploring mechanics, waves, electromagnetism, and modern physics",
+      "tags": ["Simulations", "3D Models", "Formulas"],
+      "button": "Enter Physics Lab"
+    },
+    "chemistry_card": {
+      "title": "Chemistry Labs",
+      "description": "15+ interactive reactions with visual simulations",
+      "tags": ["Reactions", "Elements", "Compounds"],
+      "button": "Enter Chemistry Lab"
+    }
+  },
+  "physics": {
+    "title": "Physics Lab",
+    "explore_subtitle": "Explore the universe through interactive simulations.",
+    "stats": "20+ experiments · 14 formulas · 42 glossary terms · 6 unit categories",
+    "start_exploring": "Start Exploring",
+    "library": {
+      "page_title": "Physics Library",
+      "description": "Constants, equations, and fundamental laws of physics.",
+      "name": "Name",
+      "symbol": "Symbol",
+      "value": "Value",
+      "unit": "Unit"
+    },
+    "converter": {
+      "page_title": "Unit Converter",
+      "description": "Convert between physics units instantly.",
+      "from": "From",
+      "to": "To"
+    },
+    "calculator": {
+      "page_title": "Formula Calculator",
+      "description": "Compute physics quantities from fundamental equations.",
+      "result": "Result"
+    },
+    "glossary": {
+      "page_title": "Physics Glossary",
+      "description": "Key physics terms and definitions",
+      "no_match": "No matching terms found."
+    },
+    "challenges": {
+      "page_title": "Challenges",
+      "description": "Test your physics knowledge with interactive problems.",
+      "show_hint": "Show Hint",
+      "incorrect": "Not quite. Try again!"
+    },
+    "branches": {
+      "classical_mechanics": "Classical Mechanics",
+      "classical_mechanics_desc": "6 experiments: projectile, pendulum, spring, collisions, circular motion, inclined plane",
+      "electricity_magnetism": "Electricity & Magnetism",
+      "electricity_magnetism_desc": "Coulomb's law, Ohm's law circuits, magnetic field visualization",
+      "thermodynamics": "Thermodynamics",
+      "thermodynamics_desc": "Ideal gas simulation, heat transfer & conduction",
+      "waves_optics": "Waves & Optics",
+      "waves_optics_desc": "Transverse waves, standing waves, Doppler effect, double slit diffraction",
+      "modern_physics": "Modern Physics",
+      "modern_physics_desc": "Quantum atom, photoelectric effect, blackbody radiation, nuclear decay",
+      "physics_library": "Physics Library",
+      "physics_library_desc": "14 constants, 24 equations across all branches",
+      "formula_calculator": "Formula Calculator",
+      "formula_calculator_desc": "14 physics formulas with instant computation",
+      "unit_converter": "Unit Converter",
+      "unit_converter_desc": "6 categories: length, mass, energy, temperature, pressure, force",
+      "physics_glossary": "Physics Glossary",
+      "physics_glossary_desc": "42 key terms with definitions across all branches",
+      "challenges": "Challenges",
+      "challenges_desc": "Physics problems with hints, answer checking & scoring"
+    },
+    "mechanics": "Mechanics",
+    "waves": "Waves",
+    "electricity": "Electricity",
+    "magnetism": "Magnetism",
+    "thermodynamics": "Thermodynamics",
+    "modernPhysics": "Modern Physics",
+    "simulations": "Simulations",
+    "experiments": "Experiments",
+    "tools": "Tools",
+    "parameters": "Parameters",
+    "initial": "Initial",
+    "final": "Final",
+    "velocity": "Velocity",
+    "acceleration": "Acceleration",
+    "mass": "Mass",
+    "force": "Force",
+    "energy": "Energy",
+    "time": "Time",
+    "distance": "Distance",
+    "start": "Start",
+    "stop": "Stop",
+    "reset": "Reset",
+    "pause": "Pause",
+    "resume": "Resume",
+    "page_title": "Physics Lab",
+    "navigation": {
+      "mechanics": "Mechanics",
+      "e_m": "E&M",
+      "thermo": "Thermo",
+      "waves": "Waves",
+      "modern": "Modern",
+      "library": "Library",
+      "challenges": "Challenges",
+      "converter": "Unit Converter",
+      "calculator": "Formula Calc",
+      "glossary": "Glossary"
+    },
+    "mechanics_page": {
+      "title": "Classical Mechanics",
+      "description": "6 interactive experiments covering motion, forces, and energy. Perfect for understanding how objects move and interact in our world!",
+      "tabs": {
+        "projectile": "Projectile Motion",
+        "pendulum": "Pendulum",
+        "spring": "Spring / SHM",
+        "collision": "Collisions",
+        "circular": "Circular Motion",
+        "incline": "Inclined Plane"
+      },
+      "descriptions": {
+        "projectile": "Learn how objects travel through the air. By adjusting the launch angle and speed, you can see how gravity affects the path (trajectory) of a ball or a cannonball. Perfect for understanding sports ball paths, basketball arcs, and why 45 degrees is the optimal angle for maximum distance in a vacuum.",
+        "pendulum": "Explore simple harmonic motion. A pendulum swings back and forth, converting potential energy into kinetic energy. It's the foundation of grandfather clocks and sensors. The period of a simple pendulum is independent of its mass, depending only on length and gravity!",
+        "spring": "Discover Hooke's Law (F = -kx). Springs store elastic potential energy. This simulation shows how forces cause oscillation, which is essential for car suspensions, earthquake-resistant buildings, and even the vibration of atoms in a crystal lattice.",
+        "collision": "Test momentum and energy conservation. Watch what happens when two objects crash. Elastic collisions bounce perfectly, while inelastic ones stick together. This is the fundamental physics used in designing car safety features like airbags and crumple zones.",
+        "circular": "See why objects spin. Centripetal force keeps objects in a curved path. It explains how planets orbit stars, how NASA uses gravitational slingshots for spacecraft, and how cars turn corners without sliding out of control.",
+        "incline": "Master gravity and friction. Use a ramp to see how much force is needed to pull an object up. It demonstrates how simple machines like ramps make work easier by trading distance for force—the secret behind the Egyptian pyramids' construction!"
+      },
+      "projectile": {
+        "title": "Projectile Motion",
+        "description": "See how objects fly through the air when thrown at an angle! Perfect for understanding sports like basketball or cannonball trajectories.",
+        "controls": "Controls",
+        "results": "Results",
+        "velocity": "Velocity",
+        "angle": "Angle",
+        "gravity": "Gravity",
+        "launch": "Launch",
+        "reset": "Reset",
+        "maxHeight": "Max Height",
+        "range": "Range"
+      },
+      "pendulum": {
+        "title": "Pendulum",
+        "description": "Watch a swinging pendulum! This simple motion helps us understand timekeeping and energy transfer. Galileo discovered its secrets!"
+      },
+      "spring": {
+        "title": "Spring / Simple Harmonic Motion",
+        "description": "See how springs bounce back and forth! This is called Simple Harmonic Motion (SHM). Springs are in clocks, cars, and trampolines!"
+      },
+      "collision": {
+        "title": "Collisions",
+        "description": "Watch what happens when objects crash into each other! Learn about momentum and energy conservation - super important for car safety!"
+      },
+      "circular": {
+        "title": "Circular Motion",
+        "description": "See why things spin in circles! From planets orbiting the Sun to rides at the amusement park, circular motion is everywhere!"
+      },
+      "incline": {
+        "title": "Inclined Plane",
+        "description": "Watch objects slide down ramps! This helps us understand how friction and gravity work together on slopes."
+      }
+    },
+    "electromagnetism_page": {
+      "title": "Electromagnetism",
+      "description": "Explore electricity and magnetism - the forces that power our entire modern world!",
+      "tabs": {
+        "circuits": "Circuits",
+        "fields": "Electric Fields",
+        "magnetic": "Magnetic Fields",
+        "induction": "Induction"
+      },
+      "descriptions": {
+        "circuits": "Explore the flow of electrons. Adjust voltage and resistance to see how current changes based on Ohm's Law (V=IR)—it's like water flowing through pipes! This understanding is the foundation for all modern electronics from smartphones to power grids.",
+        "fields": "Visualize invisible forces. See how positive and negative charges push and pull each other through space according to Coulomb's Law. This is why static electricity makes your hair stand up and why lightning strikes during a storm.",
+        "magnetic": "Discover the magic of magnets. See how invisible magnetic lines guide compasses and keep the Earth protected from solar wind. This planetary 'magnetic shield' is what allows life to exist on Earth by deflecting harmful radiation.",
+        "induction": "Learn how movement creates power. By moving a magnet through a coil, you can generate electricity (Faraday's Law). This is the secret behind every power plant on Earth and the wireless charging in your modern devices.",
+        "coulomb": "Master the foundation of electrostatics. Inverse Square Law explains how the force between two charges dramatically weakens as they move apart. It governs the structure of atoms, the stability of matter, and the behavior of lightning strikes."
+      },
+      "circuits": {
+        "title": "Electric Circuits",
+        "description": "Build and test electric circuits! Learn how electricity flows through wires to power everything from your phone to your house."
+      },
+      "fields": {
+        "title": "Electric Fields",
+        "description": "See the invisible forces between electric charges! This is why static electricity makes your hair stand up."
+      },
+      "magnetic": {
+        "title": "Magnetic Fields",
+        "description": "Explore the power of magnets! Earth itself is a giant magnet - that's why compasses point north!"
+      },
+      "induction": {
+        "title": "Electromagnetic Induction",
+        "description": "Discover how moving magnets create electricity! This is how power plants generate the electricity in your home."
+      }
+    },
+    "thermodynamics_page": {
+      "title": "Thermodynamics",
+      "description": "Learn about heat, temperature, and energy transfer - the science behind engines, refrigerators, and even the weather!",
+      "tabs": {
+        "heat": "Heat Transfer",
+        "gas": "Gas Laws",
+        "engines": "Heat Engines",
+        "entropy": "Entropy"
+      },
+      "descriptions": {
+        "heat": "See how thermal energy moves. Watch heat travel between a hot cup and a cold spoon via conduction, convection, or radiation. It explains why houses need insulation, how central heating works, and why we feel warm in the sun.",
+        "gas": "Master the Ideal Gas Law (PV=nRT). See how changing pressure and volume affects temperature. This is why bike tires get hot when pumped, why scuba divers must ascend slowly, and how hot air balloons defy gravity.",
+        "engines": "Understand the power of thermal energy. Learn how steam and heat can be turned into mechanical work to drive cars, trains, and jets. It was the heart of the industrial revolution and continues to power our modern transportation.",
+        "entropy": "Learn about the arrow of time. See why systems naturally move towards disorder. It explains why ice melts in a warm room, why you can't unscramble an egg, and why the universe itself is slowly Cooling down over billions of years."
+      },
+      "heat": {
+        "title": "Heat Transfer",
+        "description": "Watch how heat moves between objects! Heat can travel by conduction (touch), convection (flow), or radiation (waves)."
+      },
+      "gas": {
+        "title": "Gas Laws",
+        "description": "See how gases behave when heated or compressed! This explains why balloons expand in the sun and shrink in the cold."
+      },
+      "engines": {
+        "title": "Heat Engines",
+        "description": "Learn how engines convert heat into motion! Car engines and steam trains both use this principle."
+      },
+      "entropy": {
+        "title": "Entropy",
+        "description": "Discover why things naturally get messier over time! Entropy explains why you can't unscramble an egg or why time flows forward."
+      }
+    },
+    "waves_page": {
+      "title": "Waves & Sound",
+      "description": "Explore the wonderful world of waves - from sound and light to ocean waves and earthquakes!",
+      "tabs": {
+        "sine": "Sine Waves",
+        "sound": "Sound Waves",
+        "light": "Light",
+        "interference": "Interference"
+      },
+      "descriptions": {
+        "sine": "Meet the simplest wave. Learn about frequency and amplitude—the basic parameters of physics. These same waveforms determine the pitch and volume of your favorite music and the color of the light you see.",
+        "transverse": "The quintessential wave motion. In transverse waves, the medium moves perpendicular to the wave's path—like a stadium wave, a plucked guitar string, or electromagnetic light waves traveling through the vacuum of space.",
+        "sound": "Visualizing vibrations as longitudinal waves. See how air molecules compress and rarefy to carry sound. It's how your voice travels across a room and how ultrasonic scans can see inside the human body without surgery.",
+        "light": "Explore the electromagnetic spectrum. Light is both a wave and a particle (photon). See how different colors have different wavelengths—forming the rainbows we see and allowing for high-speed fiber-optic internet.",
+        "interference": "Watch waves collide and combine. When peaks meet peaks, they grow (constructive); when peaks meet troughs, they vanish (destructive). This is how noise-canceling headphones create 'anti-noise' to give you peace and quiet."
+      },
+      "sine": {
+        "title": "Sine Waves",
+        "description": "The basic building block of all waves! Every wave can be made by adding simple sine waves together - it's like musical notes!"
+      },
+      "sound": {
+        "title": "Sound Waves",
+        "description": "See how sound travels through air! Sound is vibrations - when you speak, your vocal cords make the air shake all the way to someone's ears!"
+      },
+      "light": {
+        "title": "Light",
+        "description": "Light is an electromagnetic wave! It travels faster than anything in the universe - nothing can beat it!"
+      },
+      "interference": {
+        "title": "Wave Interference",
+        "description": "See what happens when waves meet! They can add up (constructive) or cancel out (destructive) - this is how noise-canceling headphones work!"
+      }
+    },
+    "modern_page": {
+      "title": "Modern Physics",
+      "description": "Discover the mind-bending physics of the 20th century - relativity, quantum mechanics, and the structure of atoms!",
+      "tabs": {
+        "relativity": "Relativity",
+        "quantum": "Quantum",
+        "atoms": "Atoms",
+        "nuclear": "Nuclear"
+      },
+      "descriptions": {
+        "relativity": "Einstein's time-warp. See how time slows down (time dilation) as you approach the speed of light. This isn't just science fiction—it's real physics that GPS satellites must account for every second to remain accurate!",
+        "quantum": "Explore the weird subatomic world. Particles like electrons behave like waves of probability. This is the science that allowed us to shrink computers from room-sized machines to the tiny chips in your pocket today.",
+        "atoms": "Build the universal building blocks. See how protons, neutrons, and electrons create different elements. Everything you touch, breathe, and see is constructed from these incredible tiny geometric structures.",
+        "atom": "The Quantum Realm. Atoms aren't tiny solar systems; they are probability clouds where electrons exist in many places at once until observed. This 'uncertainty' is the fundamental principle behind lasers and MRI machines.",
+        "nuclear": "Unlock the power of the atomic nucleus. See how splitting (fission) or joining (fusion) atoms releases massive amounts of energy—the same celestial process that makes our Sun shine and provides life to Earth."
+      },
+      "relativity": {
+        "title": "Relativity",
+        "description": "Einstein showed that time and space aren't fixed! The faster you move, the slower time passes - this is real science, not science fiction!"
+      },
+      "quantum": {
+        "title": "Quantum Mechanics",
+        "description": "The physics of the incredibly small! Atoms can be in two places at once and cats can be alive and dead - welcome to quantum weirdness!"
+      },
+      "atoms": {
+        "title": "Atomic Structure",
+        "description": "Everything is made of atoms! Atoms have a tiny nucleus with protons and neutrons, surrounded by electrons - mostly empty space!"
+      },
+      "nuclear": {
+        "title": "Nuclear Physics",
+        "description": "Learn about the incredible power inside every atom! Nuclear reactions power the Sun and can generate enough energy for entire cities."
+      }
+    },
+    "library_page": {
+      "title": "Physics Library",
+      "description": "Your reference guide for all things physics!"
+    },
+    "challenges_page": {
+      "title": "Physics Challenges",
+      "description": "Test your physics knowledge with fun challenges!"
+    },
+    "common": {
+      "controls": "Controls",
+      "results": "Results",
+      "launch": "Launch",
+      "start": "Start",
+      "stop": "Stop",
+      "reset": "Reset",
+      "pause": "Pause",
+      "resume": "Resume",
+      "time": "Time",
+      "position": "Position",
+      "velocity": "Velocity",
+      "acceleration": "Acceleration",
+      "force": "Force",
+      "energy": "Energy",
+      "momentum": "Momentum",
+      "period": "Period",
+      "frequency": "Frequency",
+      "amplitude": "Amplitude",
+      "wavelength": "Wavelength",
+      "temperature": "Temperature",
+      "pressure": "Pressure",
+      "volume": "Volume",
+      "about_experiment": "Scientific Explanation"
+    }
+  },
+
+  "index": {
+    "subtitle": "Chemistry Laboratory",
+    "title": "Chemistry Laboratory",
+    "tabs": {
+      "simulator": "Simulator",
+      "simulator_short": "Sim",
+      "calculator": "Calculator",
+      "calculator_short": "Calc"
+    },
+    "sections": {
+      "periodic_table": "Periodic Table",
+      "periodic_table_description": "Select elements for reactions"
+    },
+    "no_reaction_title": "No reaction found",
+    "no_reaction_suggestion": "Try H+O, Na+Cl, Fe+S, Cu+O, etc."
+  },
+  "chemistry": {
+    "title": "Chemistry Lab",
+    "page_title": "Chemistry Labs",
+    "page_description": "Interactive Lab",
+    "reactions": "Reactions",
+    "compounds": "Compounds",
+    "elements": "Elements",
+    "periodictable": "Periodic Table",
+    "reactionChamber": "Reaction Chamber",
+    "reactionHistory": "Reaction History",
+    "formula": "Formula",
+    "state": "State",
+    "temperature": "Temperature",
+    "pressure": "Pressure",
+    "inputCompound": "Input compound formula or name",
+    "add": "Add",
+    "clear": "Clear",
+    "result": "Result",
+    "products": "Products",
+    "reactants": "Reactants",
+    "balanced": "Balanced",
+    "notBalanced": "Not Balanced",
+    "error": "Error",
+    "success": "Success",
+    "compound_library": {
+      "title": "Compound Library",
+      "description": "Select compounds for advanced reactions",
+      "search_placeholder": "Search compounds...",
+      "selected_label": "Selected Compounds:",
+      "no_match": "No compounds matching your search"
+    },
+    "reaction_chamber": {
+      "title": "Reaction Chamber",
+      "description": "Combine elements and compounds to see reactions",
+      "empty_state": "Select elements from the periodic table or compounds from the library to begin",
+      "button": "React"
+    },
+    "reaction_history": {
+      "title": "Recent Reactions",
+      "reaction_count_singular": "reaction",
+      "reaction_count_plural": "reactions"
+    },
+    "reaction_types": {
+      "synthesis": "Synthesis",
+      "decomposition": "Decomposition",
+      "single_replacement": "Single Replacement",
+      "double_replacement": "Double Replacement",
+      "combustion": "Combustion",
+      "acid_base": "Acid-Base",
+      "redox": "Redox",
+      "precipitation": "Precipitation",
+      "neutralization": "Neutralization",
+      "oxidation": "Oxidation"
+    },
+    "element_info": {
+      "mass": "Mass",
+      "electronegativity": "Electronegativity",
+      "melting_point": "Melting Pt",
+      "boiling_point": "Boiling Pt",
+      "config": "Config",
+      "phase": "Phase",
+      "oxidation_states": "Oxidation States",
+      "related_reactions": "Related Reactions"
+    },
+    "no_reaction": {
+      "message": "No reaction found",
+      "suggestion": "Try H+O, Na+Cl, Fe+S, Cu+O, etc."
+    },
+    "calculators": {
+      "ph_poh": {
+        "name": "pH / pOH Calculator",
+        "description": "Calculate pH, pOH, and ion concentrations"
+      },
+      "molarity": {
+        "name": "Molarity Calculator",
+        "description": "Calculate molarity from moles and volume"
+      }
+    },
+    "energy": "Energy",
+    "about_reaction": "About This Reaction",
+    "real_world_use": "Real-World Use",
+    "safety": "Safety",
+    "catalyst": "Catalyst"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "search": "Search",
+    "notFound": "Not Found",
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic"
+  },
+  "glossary": {
+    "search_placeholder": "Search terms..."
+  },
+  "compound": {
+    "categories": {
+      "all": "All Compounds",
+      "acids": "Acids",
+      "bases": "Bases",
+      "salts": "Salts",
+      "oxides": "Oxides",
+      "organic": "Organic",
+      "gases": "Gases",
+      "metals": "Metal Compounds",
+      "halides": "Halides",
+      "carbonates": "Carbonates",
+      "sulfates": "Sulfates",
+      "nitrates": "Nitrates",
+      "hydroxides": "Hydroxides",
+      "peroxides": "Peroxides",
+      "complexes": "Complex Ions"
+    }
+  },
+  "elements": {
+    "categories": {
+      "alkali": "Alkali Metal",
+      "alkaline": "Alkaline Earth",
+      "transition": "Transition Metal",
+      "post-transition": "Post-Transition",
+      "metalloid": "Metalloid",
+      "nonmetal": "Nonmetal",
+      "halogen": "Halogen",
+      "noble": "Noble Gas",
+      "lanthanide": "Lanthanide",
+      "actinide": "Actinide"
+    }
+  },
+  "periodic": {
+    "categories": "Element Categories"
+  },
+
+  "calc": {
+    "calculators": "Calculators",
+    "ph": { "name": "pH Calculator", "desc": "Calculate pH, pOH, [H⁺], [OH⁻]" },
+    "molarity": { "name": "Molarity", "desc": "M = mol / L" },
+    "moles": { "name": "Moles", "desc": "n = mass / molar mass" },
+    "dilution": { "name": "Dilution", "desc": "M₁V₁ = M₂V₂" },
+    "gas": { "name": "Ideal Gas Law", "desc": "PV = nRT" },
+    "gibbs": { "name": "Gibbs Free Energy", "desc": "ΔG = ΔH - TΔS" },
+    "keq": { "name": "Equilibrium Constant", "desc": "K from ΔG" },
+    "nernst": { "name": "Nernst Equation", "desc": "Electrode potential" },
+    "arrhenius": { "name": "Arrhenius Equation", "desc": "Rate constant k" },
+    "bpe": { "name": "Boiling Point Elevation", "desc": "ΔTb = iKbm" },
+    "fpd": { "name": "Freezing Point Depression", "desc": "ΔTf = iKfm" },
+    "osmotic": { "name": "Osmotic Pressure", "desc": "π = iMRT" },
+    "hh": { "name": "Henderson-Hasselbalch", "desc": "Buffer pH" },
+    "molality": { "name": "Molality", "desc": "mol / kg solvent" },
+    "pcomp": { "name": "% Composition", "desc": "Mass percent" },
+    "bonds": { "name": "Bond Energies", "desc": "Common bond energies" },
+    "potentials": { "name": "Electrode Potentials", "desc": "Standard E° values" },
+    "solubility": { "name": "Solubility Rules", "desc": "Soluble/insoluble" },
+    "polyatomic": { "name": "Polyatomic Ions", "desc": "Common ions reference" },
+    "activity": { "name": "Activity Series", "desc": "Metal reactivity" },
+    "acidic": "Acidic",
+    "basic": "Basic",
+    "neutral": "Neutral",
+    "spontaneous": "Spontaneous",
+    "non_spontaneous": "Non-spontaneous",
+    "products_favored": "Products favored",
+    "reactants_favored": "Reactants favored"
+  },
+  "global": {
+    "brand": {
+      "tagline": "Science through Innovation and Excellence"
+    }
+  }
+}

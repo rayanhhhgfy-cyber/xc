@@ -1,0 +1,320 @@
+Component,Type,Location (File),English Text,Context/Notes,Priority
+Landing Page,Page Title,LandingPage.tsx,"UN",Brand name,HIGH
+Landing Page,Tagline,LandingPage.tsx,"Science Labs",Tagline,HIGH
+Landing Page,Hero Title,LandingPage.tsx,"Explore Science",Main page heading,HIGH
+Landing Page,Hero Subtitle,LandingPage.tsx,"Interactive simulations and experiments for Physics and Chemistry",Descriptive text,HIGH
+Landing Page,Card Title,LandingPage.tsx,"Physics Labs",Section heading,HIGH
+Landing Page,Card Description,LandingPage.tsx,"20+ interactive experiments exploring mechanics, waves electromagnetism and modern physics",Feature description,HIGH
+Landing Page,Card Tag,LandingPage.tsx,"Simulations",Tag label,MEDIUM
+Landing Page,Card Tag,LandingPage.tsx,"3D Models",Tag label,MEDIUM
+Landing Page,Card Tag,LandingPage.tsx,"Formulas",Tag label,MEDIUM
+Landing Page,Button,LandingPage.tsx,"Enter Physics Lab",CTA button,HIGH
+Landing Page,Card Title,LandingPage.tsx,"Chemistry Labs",Section heading,HIGH
+Landing Page,Card Description,LandingPage.tsx,"15+ interactive reactions with visual simulations",Feature description,HIGH
+Landing Page,Feature Title,LandingPage.tsx,"Real-time 3D",Feature name,MEDIUM
+Landing Page,Feature Description,LandingPage.tsx,"Interactive visualizations that bring science to life",Feature detail,MEDIUM
+Landing Page,Feature Title,LandingPage.tsx,"Education First",Feature name,MEDIUM
+Landing Page,Feature Description,LandingPage.tsx,"Designed to enhance learning with practical tools",Feature detail,MEDIUM
+Landing Page,Feature Title,LandingPage.tsx,"Cutting-edge",Feature name,MEDIUM
+Landing Page,Feature Description,LandingPage.tsx,"Latest technologies for immersive experiences",Feature detail,MEDIUM
+Chemistry Page,Page Title,ChemistryIndex.tsx,"Chemistry Labs",Page heading,HIGH
+Chemistry Page,Page Subtitle,ChemistryIndex.tsx,"Interactive Lab",Page description,HIGH
+Chemistry Page,Section Title,ChemistryIndex.tsx,"Periodic Table",Section heading,HIGH
+Chemistry Page,Section Description,ChemistryIndex.tsx,"Select elements for reactions",Instruction text,HIGH
+Chemistry Page,Tab Label,ChemistryIndex.tsx,"Simulator",Tab name,HIGH
+Chemistry Page,Tab Abbreviation,ChemistryIndex.tsx,"Sim",Short tab label,HIGH
+Chemistry Page,Tab Label,ChemistryIndex.tsx,"Calculators",Tab name,HIGH
+Chemistry Page,Tab Abbreviation,ChemistryIndex.tsx,"Calc",Short tab label,HIGH
+Chemistry Page,Error Message,ChemistryIndex.tsx,"No reaction found",Error state message,MEDIUM
+Chemistry Page,Error Hint,ChemistryIndex.tsx,"Try H+O Na+Cl Fe+S Cu+O etc.",Suggestion text,MEDIUM
+Compound Selector,Section Title,CompoundSelector.tsx,"Compound Library",Component heading,HIGH
+Compound Selector,Section Description,CompoundSelector.tsx,"Select compounds for advanced reactions",Instruction text,HIGH
+Compound Selector,Placeholder,CompoundSelector.tsx,"Search compounds...",Search input placeholder,HIGH
+Compound Selector,Label,CompoundSelector.tsx,"Selected Compounds:",Label for selected items,HIGH
+Compound Selector,Empty State,CompoundSelector.tsx,"No compounds matching your search",No results message,MEDIUM
+Reaction Chamber,Section Title,ReactionChamber.tsx,"Reaction Chamber",Component heading,HIGH
+Reaction Chamber,Section Description,ReactionChamber.tsx,"Combine elements and compounds to see reactions",Instruction text,HIGH
+Reaction Chamber,Empty State,ReactionChamber.tsx,"Select elements from the periodic table or compounds from the library to begin",Help text,MEDIUM
+Reaction Chamber,Button,ReactionChamber.tsx,"React",Action button,HIGH
+Reaction History,Section Title,ReactionHistory.tsx,"Recent Reactions",Component heading,HIGH
+Reaction History,Counter Singular,ReactionHistory.tsx,"reaction",Counter label (singular),LOW
+Reaction History,Counter Plural,ReactionHistory.tsx,"reactions",Counter label (plural),LOW
+Reaction Result,Type,ReactionResult.tsx,"Synthesis",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Decomposition",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Single Replacement",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Double Replacement",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Combustion",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Acid-Base",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Redox",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Precipitation",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Neutralization",Reaction type,HIGH
+Reaction Result,Type,ReactionResult.tsx,"Oxidation",Reaction type,HIGH
+Element Info Panel,Label,ElementInfoPanel.tsx,"Mass",Property label,HIGH
+Element Info Panel,Label,ElementInfoPanel.tsx,"Electronegativity",Property label,HIGH
+Element Info Panel,Label,ElementInfoPanel.tsx,"Melting Pt",Property label,HIGH
+Element Info Panel,Label,ElementInfoPanel.tsx,"Boiling Pt",Property label,HIGH
+Element Info Panel,Label,ElementInfoPanel.tsx,"Config",Property label (abbreviation),HIGH
+Element Info Panel,Label,ElementInfoPanel.tsx,"Phase",Property label,HIGH
+Element Info Panel,Section Title,ElementInfoPanel.tsx,"Oxidation States",Section heading,HIGH
+Element Info Panel,Section Title,ElementInfoPanel.tsx,"Related Reactions",Section heading with count,HIGH
+Chemistry Calculator,Section Title,ChemCalculators.tsx,"Calculators",Component heading,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"pH / pOH Calculator",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Molarity Calculator",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Moles Calculator",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Dilution Calculator",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Ideal Gas Law",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Gibbs Free Energy",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Equilibrium Constant",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Nernst Equation",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Arrhenius Equation",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Colligative Properties - Boiling",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Colligative Properties - Freezing",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Osmotic Pressure",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Henderson-Hasselbalch",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Molality Calculator",Calculator name,HIGH
+Chemistry Calculator,Name,ChemCalculators.tsx,"Percent Composition",Calculator name,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"[H⁺] concentration (mol/L)",Input field label with unit,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"pH",Result field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"pOH",Result field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"[H⁺]",Result field label with notation,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"[OH⁻]",Result field label with notation,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Moles of solute",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Volume of solution",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"Molarity (M)",Result field label with unit,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Mass",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Molar mass",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"Moles",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"M₁ (initial concentration)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"V₁ (initial volume)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"V₂ (final volume)",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"M₂ (final concentration)",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Pressure (leave blank to solve)",Input field label with instruction,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Volume (leave blank to solve)",Input field label with instruction,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Moles (leave blank to solve)",Input field label with instruction,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Temperature (leave blank to solve)",Input field label with instruction,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"P",Result field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"V",Result field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"n",Result field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"T",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"ΔH",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"T",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"ΔS",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"ΔG",Result field label,HIGH
+Chemistry Calculator,Result Text,ChemCalculators.tsx,"✅ Spontaneous",Result message,MEDIUM
+Chemistry Calculator,Result Text,ChemCalculators.tsx,"❌ Non-spontaneous",Result message,MEDIUM
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"ΔG",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"T",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"K (equilibrium constant)",Result field label,HIGH
+Chemistry Calculator,Result Text,ChemCalculators.tsx,"→ Products favored",Result interpretation,MEDIUM
+Chemistry Calculator,Result Text,ChemCalculators.tsx,"← Reactants favored",Result interpretation,MEDIUM
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"E° (standard potential)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"n (electrons transferred)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Q (reaction quotient)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"T",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"E (cell potential)",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"A (pre-exponential)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Ea (activation energy)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"T",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"k (rate constant)",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"i (van't Hoff factor)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Kb",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Molality",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"ΔTb",Result field label,HIGH
+Chemistry Calculator,Result Text,ChemCalculators.tsx,"New BP (water):",Result label,MEDIUM
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"i (van't Hoff factor)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Kf",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Molality",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"ΔTf",Result field label,HIGH
+Chemistry Calculator,Result Text,ChemCalculators.tsx,"New FP (water):",Result label,MEDIUM
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"i (van't Hoff factor)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Molarity",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"T",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"π (osmotic pressure)",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"pKa",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"[A⁻] (conjugate base)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"[HA] (weak acid)",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"pH",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Moles of solute",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Mass of solvent",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"Molality",Result field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Mass of element (in 1 mol)",Input field label,HIGH
+Chemistry Calculator,Input Label,ChemCalculators.tsx,"Molar mass of compound",Input field label,HIGH
+Chemistry Calculator,Output Label,ChemCalculators.tsx,"% Composition",Result field label,HIGH
+Chemistry Calculator,pH Scale Label,ChemCalculators.tsx,"0 Acidic",pH scale marker,MEDIUM
+Chemistry Calculator,pH Scale Label,ChemCalculators.tsx,"7",pH scale marker,MEDIUM
+Chemistry Calculator,pH Scale Label,ChemCalculators.tsx,"14 Basic",pH scale marker,MEDIUM
+Chemistry Calculator,Solubility Label,ChemCalculators.tsx,"✓ Soluble",Solubility indicator,MEDIUM
+Chemistry Calculator,Solubility Label,ChemCalculators.tsx,"✗ Insoluble",Solubility indicator,MEDIUM
+Chemistry Calculator,Reactivity Label,ChemCalculators.tsx,"Most reactive → Least reactive",Reactivity indicator,MEDIUM
+Navigation,Menu Item,Navbar.tsx,"Home",Menu link,HIGH
+Navigation,Menu Item,Navbar.tsx,"Mechanics",Menu link,HIGH
+Navigation,Menu Item,Navbar.tsx,"E&M",Menu link (abbreviation),HIGH
+Navigation,Menu Item,Navbar.tsx,"Thermo",Menu link (abbreviation),HIGH
+Navigation,Menu Item,Navbar.tsx,"Waves",Menu link,HIGH
+Navigation,Menu Item,Navbar.tsx,"Modern",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Back to home",Link tooltip,HIGH
+Physics Navigation,Site Name,PhysicsLayout.tsx,"Physics Lab",Brand name,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Mechanics",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"E&M",Menu link (abbreviation),HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Thermo",Menu link (abbreviation),HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Waves",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Modern",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Library",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Challenges",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Unit Converter",Menu link,HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Formula Calc",Menu link (abbreviation),HIGH
+Physics Navigation,Menu Item,PhysicsLayout.tsx,"Glossary",Menu link,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Classical Mechanics",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"6 experiments: projectile pendulum spring collisions circular motion inclined plane",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Electricity & Magnetism",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"Coulomb's law Ohm's law circuits magnetic field visualization",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Thermodynamics",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"Ideal gas simulation heat transfer & conduction",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Waves & Optics",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"Transverse waves standing waves Doppler effect double slit diffraction",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Modern Physics",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"Quantum atom photoelectric effect blackbody radiation nuclear decay",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Physics Library",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"14 constants 24 equations across all branches",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Formula Calculator",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"14 physics formulas with instant computation",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Unit Converter",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"6 categories: length mass energy temperature pressure force",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Physics Glossary",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"42 key terms with definitions across all branches",Branch description,HIGH
+Physics Index,Card Title,physics/Index.tsx,"Challenges",Branch title,HIGH
+Physics Index,Card Description,physics/Index.tsx,"Physics problems with hints answer checking & scoring",Branch description,HIGH
+Mechanics,Experiment Name,MechanicsPage.tsx,"Projectile Motion",Simulation name,HIGH
+Mechanics,Experiment Name,MechanicsPage.tsx,"Pendulum",Simulation name,HIGH
+Mechanics,Experiment Name,MechanicsPage.tsx,"Spring / SHM",Simulation name,HIGH
+Mechanics,Experiment Name,MechanicsPage.tsx,"Collisions",Simulation name,HIGH
+Mechanics,Experiment Name,MechanicsPage.tsx,"Circular Motion",Simulation name,HIGH
+Mechanics,Experiment Name,MechanicsPage.tsx,"Inclined Plane",Simulation name,HIGH
+Mechanics,Parameter,MechanicsPage.tsx,"Velocity",Slider label,HIGH
+Mechanics,Parameter,MechanicsPage.tsx,"Angle",Slider label,HIGH
+Mechanics,Parameter,MechanicsPage.tsx,"Gravity",Slider label,HIGH
+Mechanics,Result,MechanicsPage.tsx,"Time",Result label,HIGH
+Mechanics,Result,MechanicsPage.tsx,"X",Result label,HIGH
+Mechanics,Result,MechanicsPage.tsx,"Y",Result label,HIGH
+Mechanics,Result,MechanicsPage.tsx,"Max Height",Result label,HIGH
+Mechanics,Result,MechanicsPage.tsx,"Range",Result label,HIGH
+Electromagnetism,Experiment Name,ElectromagnetismPage.tsx,"Coulomb's Law",Simulation name,HIGH
+Electromagnetism,Experiment Name,ElectromagnetismPage.tsx,"Ohm's Law Circuit",Simulation name,HIGH
+Electromagnetism,Experiment Name,ElectromagnetismPage.tsx,"Magnetic Field",Simulation name,HIGH
+Electromagnetism,Parameter,ElectromagnetismPage.tsx,"Charge 1",Slider label,HIGH
+Electromagnetism,Parameter,ElectromagnetismPage.tsx,"Charge 2",Slider label,HIGH
+Electromagnetism,Parameter,ElectromagnetismPage.tsx,"Distance",Slider label,HIGH
+Electromagnetism,Result,ElectromagnetismPage.tsx,"Force",Result label,HIGH
+Electromagnetism,Result,ElectromagnetismPage.tsx,"Type",Result label,HIGH
+Electromagnetism,Result Value,ElectromagnetismPage.tsx,"Attractive",Force type,MEDIUM
+Electromagnetism,Result Value,ElectromagnetismPage.tsx,"Repulsive",Force type,MEDIUM
+Electromagnetism,Result,ElectromagnetismPage.tsx,"Field at mid",Result label,HIGH
+Thermodynamics,Experiment Name,ThermodynamicsPage.tsx,"Ideal Gas",Simulation name,HIGH
+Thermodynamics,Experiment Name,ThermodynamicsPage.tsx,"Heat Transfer",Simulation name,HIGH
+Thermodynamics,Parameter,ThermodynamicsPage.tsx,"Temperature",Slider label,HIGH
+Thermodynamics,Parameter,ThermodynamicsPage.tsx,"Volume",Slider label,HIGH
+Thermodynamics,Parameter,ThermodynamicsPage.tsx,"Moles",Slider label,HIGH
+Thermodynamics,Result,ThermodynamicsPage.tsx,"Pressure",Result label,HIGH
+Thermodynamics,Result,ThermodynamicsPage.tsx,"KE",Result label,HIGH
+Thermodynamics,Result,ThermodynamicsPage.tsx,"RMS Speed",Result label,HIGH
+Waves,Experiment Name,WavesPage.tsx,"Transverse Wave",Simulation name,HIGH
+Waves,Experiment Name,WavesPage.tsx,"Standing Waves",Simulation name,HIGH
+Waves,Experiment Name,WavesPage.tsx,"Doppler Effect",Simulation name,HIGH
+Waves,Experiment Name,WavesPage.tsx,"Double Slit",Simulation name,HIGH
+Waves,Parameter,WavesPage.tsx,"Frequency",Slider label,HIGH
+Waves,Parameter,WavesPage.tsx,"Amplitude",Slider label,HIGH
+Waves,Parameter,WavesPage.tsx,"Wavelength",Slider label,HIGH
+Waves,Parameter,WavesPage.tsx,"Wave 2 Freq",Slider label,HIGH
+Waves,Result,WavesPage.tsx,"Wave Speed",Result label,HIGH
+Waves,Result,WavesPage.tsx,"Period",Result label,HIGH
+Waves,Result,WavesPage.tsx,"ω",Result label,HIGH
+Modern Physics,Experiment Name,ModernPhysicsPage.tsx,"Quantum Atom",Simulation name,HIGH
+Modern Physics,Experiment Name,ModernPhysicsPage.tsx,"Photoelectric",Simulation name,HIGH
+Modern Physics,Experiment Name,ModernPhysicsPage.tsx,"Blackbody",Simulation name,HIGH
+Modern Physics,Experiment Name,ModernPhysicsPage.tsx,"Nuclear Decay",Simulation name,HIGH
+Modern Physics,Parameter,ModernPhysicsPage.tsx,"Energy Levels",Slider label,HIGH
+Modern Physics,Parameter,ModernPhysicsPage.tsx,"Photon Energy",Slider label,HIGH
+Modern Physics,Parameter,ModernPhysicsPage.tsx,"Velocity (β)",Slider label,HIGH
+Modern Physics,Result,ModernPhysicsPage.tsx,"Bohr E(n)",Result label,HIGH
+Modern Physics,Result,ModernPhysicsPage.tsx,"Photon λ",Result label,HIGH
+Modern Physics,Result,ModernPhysicsPage.tsx,"Lorentz γ",Result label,HIGH
+Modern Physics,Result,ModernPhysicsPage.tsx,"Time Dilation",Result label,HIGH
+Modern Physics,Result,ModernPhysicsPage.tsx,"Length Contract",Result label,HIGH
+Blackbody Sim,Parameter,sims/BlackbodySim.tsx,"Temperature",Slider label,HIGH
+Blackbody Sim,Result,sims/BlackbodySim.tsx,"Wien Peak",Result label,HIGH
+Blackbody Sim,Result,sims/BlackbodySim.tsx,"Total Power",Result label,HIGH
+Blackbody Sim,Result,sims/BlackbodySim.tsx,"Visible?",Result label,HIGH
+Blackbody Sim,Result Value,sims/BlackbodySim.tsx,"Yes",Yes/No answer,MEDIUM
+Blackbody Sim,Result Value,sims/BlackbodySim.tsx,"No",Yes/No answer,MEDIUM
+Circular Motion Sim,Parameter,sims/CircularMotionSim.tsx,"Radius",Slider label,HIGH
+Circular Motion Sim,Parameter,sims/CircularMotionSim.tsx,"Mass",Slider label,HIGH
+Circular Motion Sim,Parameter,sims/CircularMotionSim.tsx,"Speed",Slider label,HIGH
+Circular Motion Sim,Result,sims/CircularMotionSim.tsx,"Angular Vel (ω)",Result label,HIGH
+Circular Motion Sim,Result,sims/CircularMotionSim.tsx,"Centripetal Force",Result label,HIGH
+Circular Motion Sim,Result,sims/CircularMotionSim.tsx,"Period",Result label,HIGH
+Circular Motion Sim,Result,sims/CircularMotionSim.tsx,"Centripetal Accel",Result label,HIGH
+Collision Sim,Parameter,sims/CollisionSim.tsx,"Mass 1",Slider label,HIGH
+Collision Sim,Parameter,sims/CollisionSim.tsx,"Velocity 1",Slider label,HIGH
+Collision Sim,Parameter,sims/CollisionSim.tsx,"Mass 2",Slider label,HIGH
+Collision Sim,Parameter,sims/CollisionSim.tsx,"Velocity 2",Slider label,HIGH
+Collision Sim,Result,sims/CollisionSim.tsx,"KE Before",Result label,HIGH
+Collision Sim,Result,sims/CollisionSim.tsx,"KE After",Result label,HIGH
+Collision Sim,Result,sims/CollisionSim.tsx,"Momentum",Result label,HIGH
+Collision Sim,Result,sims/CollisionSim.tsx,"v1 after",Result label,HIGH
+Collision Sim,Result,sims/CollisionSim.tsx,"v2 after",Result label,HIGH
+Collision Sim,Result,sims/CollisionSim.tsx,"Final v",Result label,HIGH
+Doppler Sim,Parameter,sims/DopplerSim.tsx,"Source Freq",Slider label,HIGH
+Doppler Sim,Parameter,sims/DopplerSim.tsx,"Source Speed",Slider label,HIGH
+Doppler Sim,Parameter,sims/DopplerSim.tsx,"Sound Speed",Slider label,HIGH
+Doppler Sim,Result,sims/DopplerSim.tsx,"f (approach)",Result label,HIGH
+Doppler Sim,Result,sims/DopplerSim.tsx,"f (recede)",Result label,HIGH
+Doppler Sim,Result,sims/DopplerSim.tsx,"Mach",Result label,HIGH
+Challenges,Challenge Title,ChallengesPage.tsx,"Freefall Time",Challenge name,HIGH
+Challenges,Challenge Question,ChallengesPage.tsx,"A ball is dropped from 80m. How long does it take to hit the ground? (g = 9.81 m/s²)",Question text,HIGH
+Challenges,Challenge Hint,ChallengesPage.tsx,"Use h = ½gt²",Hint text,HIGH
+Challenges,Challenge Title,ChallengesPage.tsx,"Coulomb Force",Challenge name,HIGH
+Challenges,Challenge Question,ChallengesPage.tsx,"Two charges of 3μC and 5μC are 0.2m apart. What is the force in Newtons? (k = 8.99×10⁹)",Question text,HIGH
+Challenges,Challenge Hint,ChallengesPage.tsx,"F = kq₁q₂/r²",Hint text,HIGH
+Challenges,Challenge Title,ChallengesPage.tsx,"Ideal Gas Pressure",Challenge name,HIGH
+Challenges,Challenge Question,ChallengesPage.tsx,"2 moles of gas at 350K in 1L. What's the pressure in kPa? (R = 8.314)",Question text,HIGH
+Challenges,Challenge Hint,ChallengesPage.tsx,"PV = nRT",Hint text,HIGH
+Challenges,Challenge Title,ChallengesPage.tsx,"Wave Speed",Challenge name,HIGH
+Challenges,Challenge Question,ChallengesPage.tsx,"A wave has frequency 5Hz and wavelength 3m. What's its speed?",Question text,HIGH
+Challenges,Challenge Hint,ChallengesPage.tsx,"v = fλ",Hint text,HIGH
+Challenges,Challenge Title,ChallengesPage.tsx,"Lorentz Factor",Challenge name,HIGH
+Challenges,Challenge Question,ChallengesPage.tsx,"What is the Lorentz factor γ for v = 0.8c?",Question text,HIGH
+Challenges,Challenge Hint,ChallengesPage.tsx,"γ = 1/√(1-β²)",Hint text,HIGH
+Challenges,Challenge Title,ChallengesPage.tsx,"Photon Wavelength",Challenge name,HIGH
+Challenges,Challenge Question,ChallengesPage.tsx,"What's the wavelength (nm) of a 4eV photon? (h=6.626e-34 c=3e8 eV=1.602e-19)",Question text,HIGH
+Challenges,Challenge Hint,ChallengesPage.tsx,"λ = hc/E",Hint text,HIGH
+Challenges,UI Label,ChallengesPage.tsx,"Difficulty",Form label,HIGH
+Challenges,UI Label,ChallengesPage.tsx,"Branch",Form label,HIGH
+Challenges,Difficulty Level,ChallengesPage.tsx,"Easy",Difficulty indicator,HIGH
+Challenges,Difficulty Level,ChallengesPage.tsx,"Medium",Difficulty indicator,HIGH
+Challenges,Difficulty Level,ChallengesPage.tsx,"Hard",Difficulty indicator,HIGH
+Challenges,Branch Name,ChallengesPage.tsx,"Mechanics",Branch/category,HIGH
+Challenges,Branch Name,ChallengesPage.tsx,"E&M",Branch/category,HIGH
+Challenges,Branch Name,ChallengesPage.tsx,"Thermo",Branch/category,HIGH
+Challenges,Branch Name,ChallengesPage.tsx,"Waves",Branch/category,HIGH
+Challenges,Branch Name,ChallengesPage.tsx,"Modern",Branch/category,HIGH
+Challenges,Input Placeholder,ChallengesPage.tsx,"Your answer...",Input field placeholder,HIGH
+Challenges,UI Label,ChallengesPage.tsx,"Score",Result label,MEDIUM
+Challenges,Result Status,ChallengesPage.tsx,"Correct",Correct answer indicator,MEDIUM
+Challenges,Result Status,ChallengesPage.tsx,"Incorrect",Incorrect answer indicator,MEDIUM
+Library,Page Title,LibraryPage.tsx,"Physics Library",Page heading,HIGH
+Library,Section Label,LibraryPage.tsx,"Constants",Section heading,HIGH
+Library,Section Label,LibraryPage.tsx,"Equations",Section heading,HIGH
+Library,Placeholder,LibraryPage.tsx,"Search...",Search input placeholder,HIGH
+Converter,Page Title,UnitConverterPage.tsx,"Unit Converter",Page heading,HIGH
+Converter,Description,UnitConverterPage.tsx,"Convert between different units",Page description,MEDIUM
+Calculator,Page Title,FormulaCalcPage.tsx,"Formula Calculator",Page heading,HIGH
+Calculator,Description,FormulaCalcPage.tsx,"Quick physics calculations",Page description,MEDIUM
+Glossary,Page Title,GlossaryPage.tsx,"Physics Glossary",Page heading,HIGH
+Glossary,Description,GlossaryPage.tsx,"Key physics terms and definitions",Page description,MEDIUM
+Glossary,Placeholder,GlossaryPage.tsx,"Search terms...",Search input placeholder,HIGH
+Error Page,Status Code,NotFound.tsx,"404",Error code,LOW
+Error Page,Message,NotFound.tsx,"Oops! Page not found",Error message,MEDIUM
+Error Page,Link,NotFound.tsx,"Return to Home",Navigation link,MEDIUM
+Footer,Credit Text,Footer.tsx,"Made by rayyan mohammed - aws altammimi -taha ababneh",Author attribution,LOW
+Footer,School Name,Footer.tsx,"King Hussain Bin Talal Secondary School for Boys Students",School attribution,LOW
+Footer,Motto,Footer.tsx,"Science through Innovation and Excellence",School motto,LOW

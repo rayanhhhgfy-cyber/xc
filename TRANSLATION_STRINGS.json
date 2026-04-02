@@ -1,0 +1,528 @@
+{
+  "global": {
+    "brand": {
+      "name": "UN",
+      "tagline": "Science Labs"
+    },
+    "navigation": {
+      "home": "Home",
+      "back_to_home": "Back to home",
+      "chemistry": "Chemistry",
+      "physics": "Physics"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Explore Science",
+      "subtitle": "Interactive simulations and experiments for Physics and Chemistry"
+    },
+    "physics_card": {
+      "title": "Physics Labs",
+      "description": "20+ interactive experiments exploring mechanics, waves, electromagnetism, and modern physics",
+      "tags": ["Simulations", "3D Models", "Formulas"],
+      "button": "Enter Physics Lab"
+    },
+    "chemistry_card": {
+      "title": "Chemistry Labs",
+      "description": "15+ interactive reactions with visual simulations",
+      "tags": ["Reactions", "Elements", "Compounds"],
+      "button": "Enter Chemistry Lab"
+    },
+    "features": {
+      "feature1": {
+        "icon": "⚡",
+        "title": "Real-time 3D",
+        "description": "Interactive visualizations that bring science to life"
+      },
+      "feature2": {
+        "icon": "🎓",
+        "title": "Education First",
+        "description": "Designed to enhance learning with practical tools"
+      },
+      "feature3": {
+        "icon": "🚀",
+        "title": "Cutting-edge",
+        "description": "Latest technologies for immersive experiences"
+      }
+    }
+  },
+  "index": {
+    "title": "Chemistry Laboratory",
+    "tabs": {
+      "simulator": "Simulator",
+      "simulator_short": "Sim",
+      "calculator": "Calculator",
+      "calculator_short": "Calc"
+    },
+    "sections": {
+      "periodic_table": "Periodic Table",
+      "periodic_table_description": "Select elements for reactions"
+    }
+  },
+  "chemistry": {
+    "page_title": "Chemistry Labs",
+    "page_description": "Interactive Lab",
+    "compound_library": {
+      "title": "Compound Library",
+      "description": "Select compounds for advanced reactions",
+      "search_placeholder": "Search compounds...",
+      "selected_label": "Selected Compounds:",
+      "no_match": "No compounds matching your search"
+    },
+    "reaction_chamber": {
+      "title": "Reaction Chamber",
+      "description": "Combine elements and compounds to see reactions",
+      "empty_state": "Select elements from the periodic table or compounds from the library to begin",
+      "button": "React"
+    },
+    "reaction_history": {
+      "title": "Recent Reactions",
+      "reaction_count_singular": "reaction",
+      "reaction_count_plural": "reactions"
+    },
+    "reaction_types": {
+      "synthesis": "Synthesis",
+      "decomposition": "Decomposition",
+      "single_replacement": "Single Replacement",
+      "double_replacement": "Double Replacement",
+      "combustion": "Combustion",
+      "acid_base": "Acid-Base",
+      "redox": "Redox",
+      "precipitation": "Precipitation",
+      "neutralization": "Neutralization",
+      "oxidation": "Oxidation"
+    },
+    "element_info": {
+      "mass": "Mass",
+      "electronegativity": "Electronegativity",
+      "melting_point": "Melting Pt",
+      "boiling_point": "Boiling Pt",
+      "config": "Config",
+      "phase": "Phase",
+      "oxidation_states": "Oxidation States",
+      "related_reactions": "Related Reactions"
+    },
+    "no_reaction": {
+      "message": "No reaction found",
+      "suggestion": "Try H+O, Na+Cl, Fe+S, Cu+O, etc."
+    }
+  },
+  "chemistry_calculators": {
+    "calculator_list_title": "Calculators",
+    "calculators": {
+      "ph_poh": {
+        "name": "pH / pOH Calculator",
+        "description": "Calculate pH, pOH, and ion concentrations"
+      },
+      "molarity": {
+        "name": "Molarity Calculator",
+        "description": "Calculate molarity from moles and volume"
+      },
+      "moles": {
+        "name": "Moles Calculator",
+        "description": "Convert between mass and moles"
+      },
+      "dilution": {
+        "name": "Dilution Calculator",
+        "description": "Use M1V1 = M2V2 equation"
+      },
+      "ideal_gas_law": {
+        "name": "Ideal Gas Law",
+        "description": "Solve for P, V, n, or T"
+      },
+      "gibbs_free_energy": {
+        "name": "Gibbs Free Energy",
+        "description": "Calculate ΔG from ΔH and ΔS"
+      },
+      "equilibrium_constant": {
+        "name": "Equilibrium Constant",
+        "description": "Calculate K from ΔG"
+      },
+      "nernst_equation": {
+        "name": "Nernst Equation",
+        "description": "Calculate cell potential"
+      },
+      "arrhenius_equation": {
+        "name": "Arrhenius Equation",
+        "description": "Calculate rate constant"
+      },
+      "colligative_boiling": {
+        "name": "Colligative Properties - Boiling",
+        "description": "Calculate boiling point elevation"
+      },
+      "colligative_freezing": {
+        "name": "Colligative Properties - Freezing",
+        "description": "Calculate freezing point depression"
+      },
+      "osmotic_pressure": {
+        "name": "Osmotic Pressure",
+        "description": "Calculate π from molarity"
+      },
+      "henderson_hasselbalch": {
+        "name": "Henderson-Hasselbalch",
+        "description": "Calculate pH of buffer solutions"
+      },
+      "molality": {
+        "name": "Molality Calculator",
+        "description": "Calculate molality from moles and mass"
+      },
+      "percent_composition": {
+        "name": "Percent Composition",
+        "description": "Calculate percent composition by mass"
+      }
+    },
+    "input_labels": {
+      "h_concentration": "[H⁺] concentration (mol/L)",
+      "ph": "pH",
+      "poh": "pOH",
+      "h_ion": "[H⁺]",
+      "oh_ion": "[OH⁻]",
+      "moles_solute": "Moles of solute",
+      "volume_solution": "Volume of solution",
+      "molarity": "Molarity (M)",
+      "mass": "Mass",
+      "molar_mass": "Molar mass",
+      "moles": "Moles",
+      "initial_concentration": "M₁ (initial concentration)",
+      "initial_volume": "V₁ (initial volume)",
+      "final_volume": "V₂ (final volume)",
+      "final_concentration": "M₂ (final concentration)",
+      "pressure": "Pressure (leave blank to solve)",
+      "volume": "Volume (leave blank to solve)",
+      "temperature": "Temperature (leave blank to solve)",
+      "initial_temp": "T",
+      "delta_h": "ΔH",
+      "delta_s": "ΔS",
+      "delta_g": "ΔG",
+      "equilibrium_constant": "K (equilibrium constant)",
+      "standard_potential": "E° (standard potential)",
+      "electrons_transferred": "n (electrons transferred)",
+      "reaction_quotient": "Q (reaction quotient)",
+      "cell_potential": "E (cell potential)",
+      "pre_exponential": "A (pre-exponential)",
+      "activation_energy": "Ea (activation energy)",
+      "rate_constant": "k (rate constant)",
+      "van_t_hoff_factor": "i (van't Hoff factor)",
+      "kb": "Kb",
+      "mass_solvent": "Mass of solvent",
+      "percent_composition": "% Composition",
+      "mass_element": "Mass of element (in 1 mol)",
+      "pka": "pKa",
+      "conjugate_base": "[A⁻] (conjugate base)",
+      "weak_acid": "[HA] (weak acid)"
+    },
+    "output_labels": {
+      "ph": "pH",
+      "poh": "pOH",
+      "molarity": "Molarity (M)",
+      "moles": "Moles",
+      "final_concentration": "M₂ (final concentration)",
+      "pressure": "P",
+      "volume": "V",
+      "moles_gas": "n",
+      "temperature": "T",
+      "delta_g": "ΔG",
+      "osmotic_pressure": "π (osmotic pressure)",
+      "boiling_point_elevation": "ΔTb",
+      "freezing_point_depression": "ΔTf"
+    },
+    "results": {
+      "spontaneous": "✅ Spontaneous",
+      "non_spontaneous": "❌ Non-spontaneous",
+      "products_favored": "→ Products favored",
+      "reactants_favored": "← Reactants favored",
+      "new_bp": "New BP (water):",
+      "new_fp": "New FP (water):",
+      "soluble": "✓ Soluble",
+      "insoluble": "✗ Insoluble",
+      "ph_scale_acidic": "0 Acidic",
+      "ph_scale_neutral": "7",
+      "ph_scale_basic": "14 Basic",
+      "most_reactive": "Most reactive → Least reactive"
+    }
+  },
+  "physics": {
+    "page_title": "Physics Lab",
+    "navigation": {
+      "mechanics": "Mechanics",
+      "e_m": "E&M",
+      "thermo": "Thermo",
+      "waves": "Waves",
+      "modern": "Modern",
+      "library": "Library",
+      "challenges": "Challenges",
+      "converter": "Unit Converter",
+      "calculator": "Formula Calc",
+      "glossary": "Glossary"
+    },
+    "index": {
+      "classical_mechanics": {
+        "title": "Classical Mechanics",
+        "description": "6 experiments: projectile, pendulum, spring, collisions, circular motion, inclined plane"
+      },
+      "electricity_magnetism": {
+        "title": "Electricity & Magnetism",
+        "description": "Coulomb's law, Ohm's law circuits, magnetic field visualization"
+      },
+      "thermodynamics": {
+        "title": "Thermodynamics",
+        "description": "Ideal gas simulation, heat transfer & conduction"
+      },
+      "waves_optics": {
+        "title": "Waves & Optics",
+        "description": "Transverse waves, standing waves, Doppler effect, double slit diffraction"
+      },
+      "modern_physics": {
+        "title": "Modern Physics",
+        "description": "Quantum atom, photoelectric effect, blackbody radiation, nuclear decay"
+      },
+      "physics_library": {
+        "title": "Physics Library",
+        "description": "14 constants, 24 equations across all branches"
+      },
+      "formula_calculator": {
+        "title": "Formula Calculator",
+        "description": "14 physics formulas with instant computation"
+      },
+      "unit_converter": {
+        "title": "Unit Converter",
+        "description": "6 categories: length, mass, energy, temperature, pressure, force"
+      },
+      "physics_glossary": {
+        "title": "Physics Glossary",
+        "description": "42 key terms with definitions across all branches"
+      },
+      "challenges": {
+        "title": "Challenges",
+        "description": "Physics problems with hints, answer checking & scoring"
+      }
+    },
+    "mechanics": {
+      "projectile_motion": "Projectile Motion",
+      "pendulum": "Pendulum",
+      "spring_shm": "Spring / SHM",
+      "collisions": "Collisions",
+      "circular_motion": "Circular Motion",
+      "inclined_plane": "Inclined Plane",
+      "parameters": {
+        "velocity": "Velocity",
+        "angle": "Angle",
+        "gravity": "Gravity",
+        "time": "Time",
+        "x": "X",
+        "y": "Y",
+        "max_height": "Max Height",
+        "range": "Range"
+      }
+    },
+    "electromagnetism": {
+      "coulombs_law": "Coulomb's Law",
+      "ohms_law": "Ohm's Law Circuit",
+      "magnetic_field": "Magnetic Field",
+      "parameters": {
+        "charge_1": "Charge 1",
+        "charge_2": "Charge 2",
+        "distance": "Distance",
+        "force": "Force",
+        "type": "Type",
+        "attractive": "Attractive",
+        "repulsive": "Repulsive",
+        "field_at_mid": "Field at mid"
+      }
+    },
+    "thermodynamics": {
+      "ideal_gas": "Ideal Gas",
+      "heat_transfer": "Heat Transfer",
+      "parameters": {
+        "temperature": "Temperature",
+        "volume": "Volume",
+        "moles": "Moles",
+        "pressure": "Pressure",
+        "ke": "KE",
+        "rms_speed": "RMS Speed"
+      }
+    },
+    "waves": {
+      "transverse_wave": "Transverse Wave",
+      "standing_waves": "Standing Waves",
+      "doppler_effect": "Doppler Effect",
+      "double_slit": "Double Slit",
+      "parameters": {
+        "frequency": "Frequency",
+        "amplitude": "Amplitude",
+        "wavelength": "Wavelength",
+        "wave_2_freq": "Wave 2 Freq",
+        "wave_speed": "Wave Speed",
+        "period": "Period",
+        "omega": "ω"
+      }
+    },
+    "modern_physics": {
+      "quantum_atom": "Quantum Atom",
+      "photoelectric": "Photoelectric",
+      "blackbody": "Blackbody",
+      "nuclear_decay": "Nuclear Decay",
+      "parameters": {
+        "energy_levels": "Energy Levels",
+        "photon_energy": "Photon Energy",
+        "velocity_beta": "Velocity (β)",
+        "bohr_energy": "Bohr E(n)",
+        "photon_wavelength": "Photon λ",
+        "lorentz_gamma": "Lorentz γ",
+        "time_dilation": "Time Dilation",
+        "length_contraction": "Length Contract"
+      }
+    },
+    "challenges": {
+      "freefall_time": {
+        "title": "Freefall Time",
+        "branch": "Mechanics",
+        "difficulty": "Easy",
+        "question": "A ball is dropped from 80m. How long does it take to hit the ground? (g = 9.81 m/s²)",
+        "hint": "Use h = ½gt²",
+        "answer": "4.04",
+        "unit": "s"
+      },
+      "coulomb_force": {
+        "title": "Coulomb Force",
+        "branch": "E&M",
+        "difficulty": "Medium",
+        "question": "Two charges of 3μC and 5μC are 0.2m apart. What is the force in Newtons? (k = 8.99×10⁹)",
+        "hint": "F = kq₁q₂/r²",
+        "answer": "3.37",
+        "unit": "N"
+      },
+      "ideal_gas_pressure": {
+        "title": "Ideal Gas Pressure",
+        "branch": "Thermo",
+        "difficulty": "Easy",
+        "question": "2 moles of gas at 350K in 1L. What's the pressure in kPa? (R = 8.314)",
+        "hint": "PV = nRT",
+        "answer": "5819.8",
+        "unit": "kPa"
+      },
+      "wave_speed": {
+        "title": "Wave Speed",
+        "branch": "Waves",
+        "difficulty": "Easy",
+        "question": "A wave has frequency 5Hz and wavelength 3m. What's its speed?",
+        "hint": "v = fλ",
+        "answer": "15",
+        "unit": "m/s"
+      },
+      "lorentz_factor": {
+        "title": "Lorentz Factor",
+        "branch": "Modern",
+        "difficulty": "Medium",
+        "question": "What is the Lorentz factor γ for v = 0.8c?",
+        "hint": "γ = 1/√(1-β²)",
+        "answer": "1.667",
+        "unit": ""
+      },
+      "photon_wavelength": {
+        "title": "Photon Wavelength",
+        "branch": "Modern",
+        "difficulty": "Hard",
+        "question": "What's the wavelength (nm) of a 4eV photon? (h=6.626e-34, c=3e8, eV=1.602e-19)",
+        "hint": "λ = hc/E",
+        "answer": "310",
+        "unit": "nm"
+      },
+      "ui": {
+        "difficulty_easy": "Easy",
+        "difficulty_medium": "Medium",
+        "difficulty_hard": "Hard",
+        "answer_placeholder": "Your answer...",
+        "difficulty_label": "Difficulty",
+        "branch_label": "Branch",
+        "score": "Score",
+        "correct": "Correct",
+        "incorrect": "Incorrect"
+      }
+    },
+    "library": {
+      "page_title": "Physics Library",
+      "constants": "Constants",
+      "equations": "Equations",
+      "search_placeholder": "Search..."
+    },
+    "converter": {
+      "page_title": "Unit Converter",
+      "description": "Convert between different units"
+    },
+    "calculator": {
+      "page_title": "Formula Calculator",
+      "description": "Quick physics calculations"
+    },
+    "glossary": {
+      "page_title": "Physics Glossary",
+      "description": "Key physics terms and definitions",
+      "search_placeholder": "Search terms..."
+    }
+  },
+  "simulations": {
+    "blackbody": {
+      "parameters": {
+        "temperature": "Temperature"
+      },
+      "results": {
+        "wien_peak": "Wien Peak",
+        "total_power": "Total Power",
+        "visible": "Visible?",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "circular_motion": {
+      "parameters": {
+        "radius": "Radius",
+        "mass": "Mass",
+        "speed": "Speed"
+      },
+      "results": {
+        "angular_velocity": "Angular Vel (ω)",
+        "centripetal_force": "Centripetal Force",
+        "period": "Period",
+        "centripetal_accel": "Centripetal Accel"
+      }
+    },
+    "collision": {
+      "parameters": {
+        "mass_1": "Mass 1",
+        "velocity_1": "Velocity 1",
+        "mass_2": "Mass 2",
+        "velocity_2": "Velocity 2"
+      },
+      "results": {
+        "ke_before": "KE Before",
+        "ke_after": "KE After",
+        "momentum": "Momentum",
+        "v1_after": "v1 after",
+        "v2_after": "v2 after",
+        "final_v": "Final v"
+      }
+    },
+    "doppler": {
+      "parameters": {
+        "source_freq": "Source Freq",
+        "source_speed": "Source Speed",
+        "sound_speed": "Sound Speed"
+      },
+      "results": {
+        "frequency_approach": "f (approach)",
+        "frequency_recede": "f (recede)",
+        "mach": "Mach"
+      }
+    }
+  },
+  "errors": {
+    "not_found_404": "404",
+    "not_found_message": "Oops! Page not found",
+    "return_home": "Return to Home"
+  },
+  "footer": {
+    "credits": "Made by rayyan mohammed - aws altammimi -taha ababneh",
+    "school": "King Hussain Bin Talal Secondary School for Boys Students",
+    "mission": "Science through Innovation and Excellence"
+  }
+}
