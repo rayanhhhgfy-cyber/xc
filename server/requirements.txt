@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pyautogui
+pillow
+openai
+python-dotenv
+mss
+pytest

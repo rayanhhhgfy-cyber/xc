@@ -20,6 +20,7 @@ export default function Navbar() {
     { path: "/physics/modern", label: t("nav.modern") },
     { path: "/physics/library", label: t("nav.library") },
     { path: "/physics/challenges", label: t("nav.challenges") },
+    { path: "/ai-agent", label: "AI Agent" },
   ];
 
   const toolLinks = [
