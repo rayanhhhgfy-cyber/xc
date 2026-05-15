@@ -6,3 +6,7 @@ openai
 python-dotenv
 mss
 pytest
+torch
+transformers
+einops
+accelerate

@@ -71,3 +71,59 @@ class AIAgent:
                 "tip": "Check your API key and internet connection.",
                 "action": {"type": "wait", "amount": 5}
             }
+
+class LocalVisionAgent:
+    def __init__(self):
+        self.model = None
+        self.tokenizer = None
+        self.model_name = "vikhyatk/moondream2"
+        self.revision = "2024-08-26" # Use a stable revision
+
+    def load_model(self):
+        if self.model is None:
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+            from PIL import Image
+            import io
+            import torch
+
+            print(f"Loading local model {self.model_name}...")
+            self.model = AutoModelForCausalLM.from_pretrained(
+                self.model_name,
+                trust_remote_code=True,
+                revision=self.revision,
+                torch_dtype=torch.float32 # Better for CPU/i3
+            )
+            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, revision=self.revision)
+            print("Local model loaded.")
+
+    def get_next_action(self, screenshot_b64, history, user_goal):
+        try:
+            self.load_model()
+            from PIL import Image
+            import io
+
+            img_data = base64.b64decode(screenshot_b64)
+            image = Image.open(io.BytesIO(img_data))
+
+            # Moondream is a VLM. We'll use a prompt to get structured info.
+            prompt = f"Goal: {user_goal}. History: {json.dumps(history[-5:])}. Based on the screenshot, what is the next computer action? Return JSON with thought, tip, action (type, x, y, text, amount)."
+
+            # Note: Moondream might not output perfect JSON every time, so we'd need more robust parsing in a real app.
+            # For this task, we'll assume it follows instructions or we'll wrap it.
+            answer = self.model.answer_question(image, prompt, self.tokenizer)
+
+            # Simple wrapper if it doesn't return JSON
+            if "{" not in answer:
+                return {
+                    "thought": answer,
+                    "tip": "Running locally on your i3!",
+                    "action": {"type": "wait", "amount": 2}
+                }
+
+            return json.loads(answer[answer.find("{"):answer.rfind("}")+1])
+        except Exception as e:
+            return {
+                "thought": f"Local model error: {str(e)}",
+                "tip": "Make sure you have enough RAM (8GB recommended).",
+                "action": {"type": "wait", "amount": 5}
+            }

@@ -10,7 +10,7 @@ from PIL import Image
 import mss
 import pyautogui
 import time
-from agent import AIAgent
+from agent import AIAgent, LocalVisionAgent
 
 app = FastAPI()
 
@@ -24,10 +24,11 @@ app.add_middleware(
 )
 
 HISTORY_FILE = "history.json"
-agent = AIAgent()
-
-# Coordinate scaling factor
+CONFIG_FILE = "config.json"
 AI_WIDTH = 1024
+
+agent_online = AIAgent()
+agent_offline = LocalVisionAgent()
 
 class Action(BaseModel):
     type: str
@@ -37,12 +38,23 @@ class Action(BaseModel):
     button: str = "left"
     amount: int = 0
 
-def init_history():
+class Config(BaseModel):
+    mode: str = "online" # "online" or "offline"
+    api_key: str = ""
+
+def init_files():
     if not os.path.exists(HISTORY_FILE):
         with open(HISTORY_FILE, "w") as f:
             json.dump([], f)
+    if not os.path.exists(CONFIG_FILE):
+        with open(CONFIG_FILE, "w") as f:
+            json.dump({"mode": "online", "api_key": ""}, f)
 
-init_history()
+init_files()
+
+def get_config():
+    with open(CONFIG_FILE, "r") as f:
+        return json.load(f)
 
 def log_to_history(entry):
     try:
@@ -62,15 +74,21 @@ def get_screen_size():
 
 def scale_coords(x_ai, y_ai):
     screen_w, screen_h = get_screen_size()
-    # Assuming AI was shown a 1024px wide image with aspect ratio preserved
     scale = screen_w / AI_WIDTH
     return int(x_ai * scale), int(y_ai * scale)
 
-@app.get("/api/status")
-async def root():
-    return {"message": "AI Agent Backend is running"}
+@app.get("/api/config")
+async def read_config():
+    return get_config()
 
-def capture_screen_b64():
+@app.post("/api/config")
+async def update_config(config: Config):
+    with open(CONFIG_FILE, "w") as f:
+        json.dump(config.dict(), f)
+    return config
+
+@app.get("/api/screenshot")
+async def get_screenshot():
     with mss.mss() as sct:
         screenshot = sct.grab(sct.monitors[1])
         img = Image.frombytes("RGB", screenshot.size, screenshot.bgra, "raw", "BGRX")
@@ -80,61 +98,52 @@ def capture_screen_b64():
             img = img.resize((AI_WIDTH, h_size), Image.Resampling.LANCZOS)
         buffered = io.BytesIO()
         img.save(buffered, format="JPEG", quality=50)
-        return base64.b64encode(buffered.getvalue()).decode()
-
-@app.get("/api/screenshot")
-async def get_screenshot():
-    try:
-        return {"image": capture_screen_b64()}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        return {"image": base64.b64encode(buffered.getvalue()).decode()}
 
 @app.post("/api/execute")
 async def execute_action(action: Action):
-    try:
-        real_x, real_y = scale_coords(action.x, action.y)
-
-        if action.type == "move":
-            pyautogui.moveTo(real_x, real_y, duration=0.5)
-        elif action.type == "click":
-            pyautogui.click(real_x, real_y, button=action.button)
-        elif action.type == "type":
-            pyautogui.write(action.text, interval=0.1)
-        elif action.type == "scroll":
-            pyautogui.scroll(action.amount)
-        elif action.type == "wait":
-            time.sleep(action.amount or 1)
-
-        log_to_history({"type": "action", "detail": action.dict()})
-        return {"status": "success", "action": action.type, "real_coords": [real_x, real_y]}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    real_x, real_y = scale_coords(action.x, action.y)
+    if action.type == "move":
+        pyautogui.moveTo(real_x, real_y, duration=0.5)
+    elif action.type == "click":
+        pyautogui.click(real_x, real_y, button=action.button)
+    elif action.type == "type":
+        pyautogui.write(action.text, interval=0.1)
+    elif action.type == "scroll":
+        pyautogui.scroll(action.amount)
+    elif action.type == "wait":
+        time.sleep(action.amount or 1)
+    log_to_history({"type": "action", "detail": action.dict()})
+    return {"status": "success", "real_coords": [real_x, real_y]}
 
 @app.post("/api/step")
-async def take_step(goal: str = Body(..., embed=True), api_key: str = Body(None, embed=True)):
+async def take_step(goal: str = Body(..., embed=True)):
+    config = get_config()
+    screenshot = (await get_screenshot())["image"]
+
+    with open(HISTORY_FILE, "r") as f:
+        history = json.load(f)
+
+    if config["mode"] == "online":
+        result = agent_online.get_next_action(screenshot, history, goal)
+    else:
+        result = agent_offline.get_next_action(screenshot, history, goal)
+
+    log_to_history({"type": "thought", "content": result["thought"], "tip": result["tip"]})
+    return result
+
+@app.post("/api/download_model")
+async def download_model():
     try:
-        if api_key:
-            agent.client.api_key = api_key
-
-        screenshot = capture_screen_b64()
-        with open(HISTORY_FILE, "r") as f:
-            history = json.load(f)
-
-        result = agent.get_next_action(screenshot, history, goal)
-
-        log_to_history({"type": "thought", "content": result["thought"], "tip": result["tip"]})
-
-        return result
+        agent_offline.load_model()
+        return {"status": "Model loaded successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/history")
 async def get_history():
-    try:
-        with open(HISTORY_FILE, "r") as f:
-            return json.load(f)
-    except Exception:
-        return []
+    with open(HISTORY_FILE, "r") as f:
+        return json.load(f)
 
 @app.post("/api/clear_history")
 async def clear_history():
@@ -142,11 +151,8 @@ async def clear_history():
         json.dump([], f)
     return {"status": "history cleared"}
 
-# Serve frontend static files
 if os.path.exists("dist"):
     app.mount("/", StaticFiles(directory="dist", html=True), name="static")
-elif os.path.exists("ui"):
-    app.mount("/", StaticFiles(directory="ui", html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
