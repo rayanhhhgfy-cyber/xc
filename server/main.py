@@ -42,6 +42,8 @@ class Config(BaseModel):
     mode: str = "online"
     api_key: str = ""
     reasoning: str = "peak" # "peak" or "lite"
+    provider: str = "openai"
+    model_name: str = "gpt-4o"
 
 def init_files():
     if not os.path.exists(HISTORY_FILE):
@@ -49,7 +51,13 @@ def init_files():
             json.dump([], f)
     if not os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, "w") as f:
-            json.dump({"mode": "online", "api_key": "", "reasoning": "peak"}, f)
+            json.dump({
+                "mode": "online",
+                "api_key": "",
+                "reasoning": "peak",
+                "provider": "openai",
+                "model_name": "gpt-4o"
+            }, f)
 
 init_files()
 
@@ -126,7 +134,22 @@ async def take_step(goal: str = Body(..., embed=True)):
         history = json.load(f)
 
     if config["mode"] == "online":
-        result = agent_online.get_next_action(screenshot, history, goal, reasoning_level=config.get("reasoning", "peak"))
+        custom_config = {
+            "provider": config.get("provider", "openai"),
+            "model": config.get("model_name", "gpt-4o"),
+            "api_key": config.get("api_key")
+        }
+        # If using reasoning levels with default OpenAI
+        if config.get("provider") == "openai" and not config.get("model_name"):
+             custom_config["model"] = "gpt-4o" if config.get("reasoning") == "peak" else "gpt-4o-mini"
+
+        result = agent_online.get_next_action(
+            screenshot,
+            history,
+            goal,
+            reasoning_level=config.get("reasoning", "peak"),
+            custom_config=custom_config
+        )
     else:
         result = agent_offline.get_next_action(screenshot, history, goal)
 

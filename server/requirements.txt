@@ -3,6 +3,7 @@ uvicorn
 pyautogui
 pillow
 openai
+litellm
 python-dotenv
 mss
 pytest

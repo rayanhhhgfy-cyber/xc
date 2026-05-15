@@ -1,21 +1,32 @@
 import os
 import json
 import base64
-from openai import OpenAI
+import litellm
+from litellm import completion
 from dotenv import load_dotenv
 
 load_dotenv()
 
+# Suppress logging for cleaner output
+litellm.set_verbose = False
+
 class AIAgent:
     def __init__(self, api_key=None):
-        self.client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"))
-        self.model = "gpt-4o" # Peak reasoning model
+        self.api_key = api_key
 
-    def get_next_action(self, screenshot_b64, history, user_goal, reasoning_level="peak"):
-        # Use gpt-4o-mini for 'lite', gpt-4o for 'peak'
-        current_model = "gpt-4o" if reasoning_level == "peak" else "gpt-4o-mini"
+    def get_next_action(self, screenshot_b64, history, user_goal, reasoning_level="peak", custom_config=None):
+        # Default to OpenAI if no config provided
+        config = custom_config or {"provider": "openai", "model": "gpt-4o" if reasoning_level == "peak" else "gpt-4o-mini"}
 
-        system_prompt = """
+        model_name = config.get("model")
+        provider = config.get("provider", "openai")
+        api_key = config.get("api_key") or self.api_key or os.getenv(f"{provider.upper()}_API_KEY")
+
+        # LiteLLM format: provider/model (e.g., anthropic/claude-3-opus-20240229)
+        # If it's just 'gpt-4o', litellm defaults to openai
+        full_model_name = model_name if "/" in model_name or provider == "openai" else f"{provider}/{model_name}"
+
+        system_prompt = f"""
         You are a World-Class Autonomous AI Agent with full control over the user's computer.
         Your primary directive is to accomplish the user's goal with extreme precision and logical rigor.
 
@@ -50,8 +61,8 @@ class AIAgent:
         """
 
         try:
-            response = self.client.chat.completions.create(
-                model=current_model,
+            response = completion(
+                model=full_model_name,
                 messages=[
                     {
                         "role": "system",
@@ -68,6 +79,7 @@ class AIAgent:
                         ],
                     }
                 ],
+                api_key=api_key,
                 response_format={"type": "json_object"}
             )
 
@@ -75,8 +87,8 @@ class AIAgent:
             return result
         except Exception as e:
             return {
-                "thought": f"Critical Error in Peak Reasoning: {str(e)}",
-                "tip": "Switching to Lite mode or checking API limits might help.",
+                "thought": f"Critical Error with {full_model_name}: {str(e)}",
+                "tip": "Verify your API Key and Model compatibility (ensure it supports Vision/JSON).",
                 "action": {"type": "wait", "amount": 5}
             }
 

@@ -4,9 +4,7 @@ import json
 
 def test_agent_initialization():
     agent = AIAgent(api_key="test_key")
-    # Updated to reflect peak model by default
-    assert agent.model == "gpt-4o"
-    assert agent.client.api_key == "test_key"
+    assert agent.api_key == "test_key"
 
 def test_local_agent_initialization():
     agent = LocalVisionAgent()

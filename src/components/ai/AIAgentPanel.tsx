@@ -13,6 +13,8 @@ const AIAgentPanel = () => {
   const [apiKey, setApiKey] = useState("");
   const [mode, setMode] = useState("online");
   const [reasoning, setReasoning] = useState("peak");
+  const [provider, setProvider] = useState("openai");
+  const [modelName, setModelName] = useState("gpt-4o");
   const [isRunning, setIsRunning] = useState(false);
   const [history, setHistory] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +30,8 @@ const AIAgentPanel = () => {
         setMode(data.mode);
         setApiKey(data.api_key);
         setReasoning(data.reasoning || "peak");
+        setProvider(data.provider || "openai");
+        setModelName(data.model_name || "gpt-4o");
       } catch (err) {
         console.error("Failed to fetch config", err);
       }
@@ -51,28 +55,46 @@ const AIAgentPanel = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const saveConfig = async (newMode: string, newKey: string, newReasoning: string) => {
+  const saveConfig = async (overrides: any = {}) => {
+    const config = {
+      mode,
+      api_key: apiKey,
+      reasoning,
+      provider,
+      model_name: modelName,
+      ...overrides
+    };
     await fetch(`${API_BASE}/config`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode: newMode, api_key: newKey, reasoning: newReasoning })
+      body: JSON.stringify(config)
     });
   };
 
   const handleModeChange = (val: string) => {
     setMode(val);
-    saveConfig(val, apiKey, reasoning);
+    saveConfig({ mode: val });
   };
 
   const handleApiKeyChange = (val: string) => {
     setApiKey(val);
-    saveConfig(mode, val, reasoning);
+    saveConfig({ api_key: val });
   };
 
   const handleReasoningChange = (val: string) => {
     setReasoning(val);
-    saveConfig(mode, apiKey, val);
+    saveConfig({ reasoning: val });
     toast.success(`Switched to ${val} reasoning mode`);
+  };
+
+  const handleProviderChange = (val: string) => {
+    setProvider(val);
+    saveConfig({ provider: val });
+  };
+
+  const handleModelNameChange = (val: string) => {
+    setModelName(val);
+    saveConfig({ model_name: val });
   };
 
   const handleStep = async () => {
@@ -253,17 +275,47 @@ const AIAgentPanel = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               {mode === 'online' ? (
-                <div className="space-y-1">
-                  <label className="text-[10px] uppercase font-bold text-muted-foreground">OpenAI API Key</label>
-                  <Input
-                    type="password"
-                    placeholder="sk-..."
-                    className="h-8 text-xs"
-                    value={apiKey}
-                    onChange={(e) => handleApiKeyChange(e.target.value)}
-                  />
+                <div className="space-y-2">
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase font-bold text-muted-foreground">Provider</label>
+                    <select
+                      className="w-full h-8 text-xs bg-transparent border rounded px-2"
+                      value={provider}
+                      onChange={(e) => handleProviderChange(e.target.value)}
+                    >
+                      <option value="openai">OpenAI</option>
+                      <option value="anthropic">Anthropic</option>
+                      <option value="google">Google (Gemini)</option>
+                      <option value="groq">Groq</option>
+                      <option value="mistral">Mistral</option>
+                      <option value="together_ai">Together AI</option>
+                      <option value="openrouter">OpenRouter</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase font-bold text-muted-foreground">Model Name</label>
+                    <Input
+                      placeholder="e.g. gpt-4o, claude-3-opus-20240229"
+                      className="h-8 text-xs"
+                      value={modelName}
+                      onChange={(e) => handleModelNameChange(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase font-bold text-muted-foreground">API Key</label>
+                    <Input
+                      type="password"
+                      placeholder="API Key"
+                      className="h-8 text-xs"
+                      value={apiKey}
+                      onChange={(e) => handleApiKeyChange(e.target.value)}
+                    />
+                  </div>
+
                   <p className="text-[10px] text-muted-foreground">
-                    {reasoning === 'peak' ? 'Peak mode uses GPT-4o for maximum logic.' : 'Lite mode uses GPT-4o-mini for speed.'}
+                    {reasoning === 'peak' ? 'Universal support via LiteLLM.' : 'Lite mode uses your specified provider/model.'}
                   </p>
                 </div>
               ) : (
