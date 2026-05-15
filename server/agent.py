@@ -9,50 +9,58 @@ load_dotenv()
 class AIAgent:
     def __init__(self, api_key=None):
         self.client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"))
-        self.model = "gpt-4o-mini" # Fast and vision capable
+        self.model = "gpt-4o" # Peak reasoning model
 
-    def get_next_action(self, screenshot_b64, history, user_goal):
+    def get_next_action(self, screenshot_b64, history, user_goal, reasoning_level="peak"):
+        # Use gpt-4o-mini for 'lite', gpt-4o for 'peak'
+        current_model = "gpt-4o" if reasoning_level == "peak" else "gpt-4o-mini"
+
         system_prompt = """
-        You are an autonomous AI Agent with full control over the user's computer.
-        You can see the screen and execute actions.
-        Your goal: {goal}
+        You are a World-Class Autonomous AI Agent with full control over the user's computer.
+        Your primary directive is to accomplish the user's goal with extreme precision and logical rigor.
 
-        Current History:
+        USER GOAL: {goal}
+
+        ### Chain of Thought Protocol:
+        Before deciding on an action, you MUST mentally perform the following steps:
+        1. OBSERVE: Describe exactly what you see on the screen (windows, buttons, icons, text).
+        2. ANALYZE: Evaluate the current state against the goal and the history of actions.
+        3. PLAN: Determine the most efficient next step. If a complex task requires multiple steps, break it down.
+        4. VERIFY: Ensure the coordinates and action type are perfect for the UI elements visible.
+
+        ### History:
         {history}
 
-        Analyze the screenshot and decide the next logical step.
-        Return ONLY a JSON object in the following format:
+        ### Response Format:
+        Return ONLY a JSON object:
         {{
-            "thought": "Brief explanation of what you see and what you're doing",
-            "tip": "A helpful tip for the user related to this task",
+            "thought": "Your detailed step-by-step reasoning (Chain of Thought)",
+            "tip": "A professional tip for the user to optimize their workflow",
             "action": {{
                 "type": "click|type|scroll|move|wait|done",
-                "x": 123, (for click/move)
-                "y": 456, (for click/move)
-                "text": "text to type", (for type)
-                "amount": 100, (for scroll/wait)
-                "button": "left|right" (for click)
+                "x": 0-1024,
+                "y": 0-variable (relative to width),
+                "text": "string",
+                "amount": integer,
+                "button": "left|right"
             }}
         }}
 
-        Important:
-        - The screen resolution in the screenshot is 1024px wide (aspect ratio preserved).
-        - If the task is finished, use action type "done".
-        - Be precise with coordinates.
+        Important: The screen is scaled to 1024px width for your vision.
         """
 
         try:
             response = self.client.chat.completions.create(
-                model=self.model,
+                model=current_model,
                 messages=[
                     {
                         "role": "system",
-                        "content": system_prompt.format(goal=user_goal, history=json.dumps(history[-10:]))
+                        "content": system_prompt.format(goal=user_goal, history=json.dumps(history[-15:]))
                     },
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": "What is the next action?"},
+                            {"type": "text", "text": "Execute Chain of Thought and provide the next action."},
                             {
                                 "type": "image_url",
                                 "image_url": {"url": f"data:image/jpeg;base64,{screenshot_b64}"}
@@ -67,8 +75,8 @@ class AIAgent:
             return result
         except Exception as e:
             return {
-                "thought": f"Error communicating with AI: {str(e)}",
-                "tip": "Check your API key and internet connection.",
+                "thought": f"Critical Error in Peak Reasoning: {str(e)}",
+                "tip": "Switching to Lite mode or checking API limits might help.",
                 "action": {"type": "wait", "amount": 5}
             }
 
@@ -77,13 +85,11 @@ class LocalVisionAgent:
         self.model = None
         self.tokenizer = None
         self.model_name = "vikhyatk/moondream2"
-        self.revision = "2024-08-26" # Use a stable revision
+        self.revision = "2024-08-26"
 
     def load_model(self):
         if self.model is None:
             from transformers import AutoModelForCausalLM, AutoTokenizer
-            from PIL import Image
-            import io
             import torch
 
             print(f"Loading local model {self.model_name}...")
@@ -91,7 +97,7 @@ class LocalVisionAgent:
                 self.model_name,
                 trust_remote_code=True,
                 revision=self.revision,
-                torch_dtype=torch.float32 # Better for CPU/i3
+                torch_dtype=torch.float32
             )
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, revision=self.revision)
             print("Local model loaded.")
@@ -105,25 +111,21 @@ class LocalVisionAgent:
             img_data = base64.b64decode(screenshot_b64)
             image = Image.open(io.BytesIO(img_data))
 
-            # Moondream is a VLM. We'll use a prompt to get structured info.
-            prompt = f"Goal: {user_goal}. History: {json.dumps(history[-5:])}. Based on the screenshot, what is the next computer action? Return JSON with thought, tip, action (type, x, y, text, amount)."
+            prompt = f"Goal: {user_goal}. Step-by-step reasoning: Look at the screen, analyze elements, and decide the next move. Return JSON with thought, tip, action (type, x, y, text, amount)."
 
-            # Note: Moondream might not output perfect JSON every time, so we'd need more robust parsing in a real app.
-            # For this task, we'll assume it follows instructions or we'll wrap it.
             answer = self.model.answer_question(image, prompt, self.tokenizer)
 
-            # Simple wrapper if it doesn't return JSON
             if "{" not in answer:
                 return {
                     "thought": answer,
-                    "tip": "Running locally on your i3!",
+                    "tip": "Local inference complete.",
                     "action": {"type": "wait", "amount": 2}
                 }
 
             return json.loads(answer[answer.find("{"):answer.rfind("}")+1])
         except Exception as e:
             return {
-                "thought": f"Local model error: {str(e)}",
-                "tip": "Make sure you have enough RAM (8GB recommended).",
+                "thought": f"Local reasoning error: {str(e)}",
+                "tip": "Consider freeing up some memory.",
                 "action": {"type": "wait", "amount": 5}
             }

@@ -2,6 +2,14 @@
 
 This program allows an AI to see your screen and control your computer autonomously.
 
+## 🚀 Easy Start (Windows)
+1. **Run `start.bat`**: Double-click the `start.bat` file in the root directory.
+2. **Open Browser**: Go to `http://localhost:8000`
+3. **Configure**:
+   - **Online**: Enter your OpenAI API Key.
+   - **Offline**: Click "Init Local Model" (First time only).
+4. **Enter Goal**: Type what you want the AI to do and click "Start Agent".
+
 ## Prerequisites
 - Python 3.10+
 - Node.js & NPM

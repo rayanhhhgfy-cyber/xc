@@ -1,11 +1,11 @@
 import pytest
 from server.agent import AIAgent, LocalVisionAgent
 import json
-from unittest.mock import MagicMock
 
 def test_agent_initialization():
     agent = AIAgent(api_key="test_key")
-    assert agent.model == "gpt-4o-mini"
+    # Updated to reflect peak model by default
+    assert agent.model == "gpt-4o"
     assert agent.client.api_key == "test_key"
 
 def test_local_agent_initialization():

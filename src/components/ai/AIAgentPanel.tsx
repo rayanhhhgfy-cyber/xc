@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Play, Square, RotateCcw, ShieldAlert, Cpu, Download, Globe, CloudOff, Loader2 } from "lucide-react";
+import { Play, Square, RotateCcw, ShieldAlert, Cpu, Download, Globe, CloudOff, Loader2, Zap, Brain } from "lucide-react";
 import ScreenPreview from "./ScreenPreview";
 import ThinkingLog from "./ThinkingLog";
 import { toast } from "sonner";
@@ -12,6 +12,7 @@ const AIAgentPanel = () => {
   const [goal, setGoal] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [mode, setMode] = useState("online");
+  const [reasoning, setReasoning] = useState("peak");
   const [isRunning, setIsRunning] = useState(false);
   const [history, setHistory] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -26,6 +27,7 @@ const AIAgentPanel = () => {
         const data = await response.json();
         setMode(data.mode);
         setApiKey(data.api_key);
+        setReasoning(data.reasoning || "peak");
       } catch (err) {
         console.error("Failed to fetch config", err);
       }
@@ -49,22 +51,28 @@ const AIAgentPanel = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const saveConfig = async (newMode: string, newKey: string) => {
+  const saveConfig = async (newMode: string, newKey: string, newReasoning: string) => {
     await fetch(`${API_BASE}/config`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode: newMode, api_key: newKey })
+      body: JSON.stringify({ mode: newMode, api_key: newKey, reasoning: newReasoning })
     });
   };
 
   const handleModeChange = (val: string) => {
     setMode(val);
-    saveConfig(val, apiKey);
+    saveConfig(val, apiKey, reasoning);
   };
 
   const handleApiKeyChange = (val: string) => {
     setApiKey(val);
-    saveConfig(mode, val);
+    saveConfig(mode, val, reasoning);
+  };
+
+  const handleReasoningChange = (val: string) => {
+    setReasoning(val);
+    saveConfig(mode, apiKey, val);
+    toast.success(`Switched to ${val} reasoning mode`);
   };
 
   const handleStep = async () => {
@@ -138,24 +146,36 @@ const AIAgentPanel = () => {
 
   return (
     <div className="container mx-auto p-4 max-w-5xl space-y-6">
-      <div className="flex items-center justify-between border-b pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between border-b pb-4 gap-4">
         <div className="flex items-center gap-3">
-          <Cpu className="text-blue-500 w-8 h-8" />
+          <div className="relative">
+            <Cpu className="text-blue-500 w-8 h-8" />
+            <Brain className="absolute -top-1 -right-1 text-purple-500 w-4 h-4 animate-pulse" />
+          </div>
           <div>
             <h1 className="text-3xl font-bold tracking-tight">AI Computer Control</h1>
-            <p className="text-muted-foreground">Autonomous AI Agent (i3 Optimized)</p>
+            <p className="text-muted-foreground text-sm flex items-center gap-1">
+              {mode === 'online' ? <Globe size={12} /> : <CloudOff size={12} />}
+              {reasoning === 'peak' ? 'Peak Intelligence Active' : 'Lite Mode Active'}
+            </p>
           </div>
         </div>
-        <Tabs value={mode} onValueChange={handleModeChange} className="w-[300px]">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="online" className="gap-2">
-              <Globe size={14} /> Online
-            </TabsTrigger>
-            <TabsTrigger value="offline" className="gap-2">
-              <CloudOff size={14} /> Offline
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Tabs value={mode} onValueChange={handleModeChange} className="w-full sm:w-[220px]">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="online">Online</TabsTrigger>
+              <TabsTrigger value="offline">Offline</TabsTrigger>
+            </TabsList>
+          </Tabs>
+          {mode === 'online' && (
+            <Tabs value={reasoning} onValueChange={handleReasoningChange} className="w-full sm:w-[220px]">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="lite" className="gap-2"><Zap size={14} /> Lite</TabsTrigger>
+                <TabsTrigger value="peak" className="gap-2"><Brain size={14} /> Peak</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          )}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -164,7 +184,7 @@ const AIAgentPanel = () => {
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
                 <CardTitle>Screen Monitor</CardTitle>
-                <CardDescription>Visual feedback of AI actions</CardDescription>
+                <CardDescription>Visualizing complex computer tasks</CardDescription>
               </div>
               {mode === 'offline' && (
                 <Button variant="outline" size="sm" onClick={setupOffline} disabled={isDownloading}>
@@ -186,7 +206,7 @@ const AIAgentPanel = () => {
               <div className="space-y-2">
                 <label className="text-sm font-medium">Task Goal</label>
                 <Input
-                  placeholder="e.g., Open browser and find recipes for lunch"
+                  placeholder="e.g., Automate my entire workflow for checking emails and summarizing them"
                   value={goal}
                   onChange={(e) => setGoal(e.target.value)}
                   disabled={isRunning}
@@ -196,11 +216,11 @@ const AIAgentPanel = () => {
               <div className="flex gap-4">
                 {!isRunning ? (
                   <Button className="flex-1 gap-2" onClick={() => setIsRunning(true)}>
-                    <Play size={18} /> Start Agent
+                    <Play size={18} /> Start Peak Reasoning
                   </Button>
                 ) : (
                   <Button variant="destructive" className="flex-1 gap-2" onClick={() => setIsRunning(false)}>
-                    <Square size={18} /> Stop Agent
+                    <Square size={18} /> Stop AI
                   </Button>
                 )}
                 <Button variant="outline" onClick={handleStep} disabled={isRunning || isLoading}>
@@ -212,7 +232,7 @@ const AIAgentPanel = () => {
         </div>
 
         <div className="space-y-6">
-          <Card>
+          <Card className="h-fit">
             <CardHeader className="flex flex-row items-center justify-between space-y-0">
               <CardTitle>Thinking Stream</CardTitle>
               <Button variant="ghost" size="icon" onClick={clearHistory}>
@@ -224,11 +244,11 @@ const AIAgentPanel = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-500/20 bg-blue-500/5">
+          <Card className="border-purple-500/20 bg-purple-500/5">
             <CardHeader>
               <CardTitle className="text-sm flex items-center gap-2">
-                <ShieldAlert size={16} className="text-blue-500" />
-                Configuration
+                <ShieldAlert size={16} className="text-purple-500" />
+                Advanced Settings
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -242,12 +262,14 @@ const AIAgentPanel = () => {
                     value={apiKey}
                     onChange={(e) => handleApiKeyChange(e.target.value)}
                   />
-                  <p className="text-[10px] text-muted-foreground">Used for GPT-4o-mini vision analysis.</p>
+                  <p className="text-[10px] text-muted-foreground">
+                    {reasoning === 'peak' ? 'Peak mode uses GPT-4o for maximum logic.' : 'Lite mode uses GPT-4o-mini for speed.'}
+                  </p>
                 </div>
               ) : (
                 <div className="space-y-1">
                   <p className="text-xs font-semibold text-blue-600">Offline Mode Active</p>
-                  <p className="text-[10px] text-muted-foreground">Using Moondream2. This runs entirely on your CPU/RAM. Initialization may take a few minutes on first run.</p>
+                  <p className="text-[10px] text-muted-foreground">Local model (Moondream2) provides basic autonomous capability without internet.</p>
                 </div>
               )}
             </CardContent>

@@ -39,8 +39,9 @@ class Action(BaseModel):
     amount: int = 0
 
 class Config(BaseModel):
-    mode: str = "online" # "online" or "offline"
+    mode: str = "online"
     api_key: str = ""
+    reasoning: str = "peak" # "peak" or "lite"
 
 def init_files():
     if not os.path.exists(HISTORY_FILE):
@@ -48,7 +49,7 @@ def init_files():
             json.dump([], f)
     if not os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, "w") as f:
-            json.dump({"mode": "online", "api_key": ""}, f)
+            json.dump({"mode": "online", "api_key": "", "reasoning": "peak"}, f)
 
 init_files()
 
@@ -125,7 +126,7 @@ async def take_step(goal: str = Body(..., embed=True)):
         history = json.load(f)
 
     if config["mode"] == "online":
-        result = agent_online.get_next_action(screenshot, history, goal)
+        result = agent_online.get_next_action(screenshot, history, goal, reasoning_level=config.get("reasoning", "peak"))
     else:
         result = agent_offline.get_next_action(screenshot, history, goal)
 
