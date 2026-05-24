@@ -24,6 +24,8 @@ import UnitConverterPage from "./pages/physics/UnitConverterPage.tsx";
 import FormulaCalcPage from "./pages/physics/FormulaCalcPage.tsx";
 import GlossaryPage from "./pages/physics/GlossaryPage.tsx";
 import PhysicsNotFound from "./pages/physics/NotFound.tsx";
+import AIAgentPanel from "./components/ai/AIAgentPanel.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -56,6 +58,8 @@ const App = () => (
             <Route path="glossary" element={<GlossaryPage />} />
             <Route path="*" element={<PhysicsNotFound />} />
           </Route>
+
+          <Route path="/ai-agent" element={<AIAgentPanel />} />
 
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />

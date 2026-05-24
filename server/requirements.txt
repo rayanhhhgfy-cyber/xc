@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pyautogui
+pillow
+openai
+litellm
+python-dotenv
+mss
+pytest
+torch
+transformers
+einops
+accelerate
